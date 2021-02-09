@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+/* Start Global */
+body {
+  font-family: "Saira", sans-serif;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* End Global */
+/* Start Style Slider */
+
+#mySlider .carousel-indicators li {
+  bottom: 20px;
+  height: 4px;
+}
+
+#mySlider .carousel-indicators li.active {
+  background-color: #6ab571;
+}
+
+#mySlider .carousel-inner .carousel-item h3 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+#mySlider .carousel-inner .carousel-item h3.color {
+  color: #6ab571;
+  font-size: 5rem !important;
+}
+
+#mySlider .carousel-inner .carousel-item p {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#mySlider .carousel-inner .carousel-item a.btn-success {
+  background-color: #6ab571 !important;
+  letter-spacing: 2px;
+}
+
+#mySlider .carousel-control-next-icon,
+#mySlider .carousel-control-prev-icon {
+  width: 30px;
+  height: 30px;
+}
+/* End Style Slider */
+/* Start Style Navbar */
+/*navbar */
+
+.navbar {
+  padding: 0.2rem 1rem;
+}
+/* Brand Name */
+
+nav .navbar-brand {
+  color: #6ab571 !important;
+}
+/* Link */
+
+nav .navbar-collapse .navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+nav .navbar-collapse .navbar-nav .nav-item > .nav-link {
+  color: #ffffff !important;
+  cursor: pointer;
+}
+
+nav .navbar-collapse .navbar-nav .nav-item.active > .nav-link,
+nav .navbar-collapse .navbar-nav .nav-item:hover > .nav-link {
+  color: #6ab571 !important;
+}
+/* End Style Navbar */
+/* Start Style About  */
+
+.about {
+  padding: 80px 0;
+  background-color: #323338;
+  color: #fff;
+  overflow: hidden;
+}
+
+.about h2 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.about h2 > span {
+  color: #6ab571;
+}
+
+.about .bor {
+  border: 1px solid #fff;
+  height: 1px;
+  width: 30%;
+  margin: 15px auto 80px;
+  position: relative;
+}
+
+.about .bor::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  background-color: #fff;
+  border: 1px ridge #fff;
+  width: 40px;
+  height: 10px;
+  margin-left: -20px;
+}
+/* ICon  */
+
+.about .row .icon-box {
+  position: relative;
+  width: 160px;
+  height: 92px;
+  background-color: transparent;
+  margin: 46px auto 60px;
+  padding: 15px 0;
+  border-left: solid 3px #ddd;
+  border-right: solid 3px #ddd;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.about .row .icon-box:hover {
+  transform: translateY(-8px);
+}
+
+.about .row .icon-box::before,
+.about .row .icon-box::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 113px;
+  height: 113px;
+  background-color: inherit;
+  left: 20px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -moz-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  -o-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+}
+
+.about .row .icon-box::before {
+  top: -56.5685px;
+  border-top: solid 4px #ddd;
+  border-right: solid 4px #ddd;
+}
+
+.about .row .icon-box::after {
+  bottom: -56.5685px;
+  border-bottom: 4px solid #ddd;
+  border-left: solid 4px #ddd;
+}
+
+.about .row .mt-4 {
+  margin-top: 4.5rem !important;
+}
+
+.about .row .mt-4 h3 {
+  font-size: 23px;
+}
+
+.about .row .mt-4 p {
+  text-transform: capitalize;
+  line-height: 1.8;
+}
+/* End Style About  */
+
+/* Start Style Video  */
+.video {
+  padding: 60px 0 50px;
+  background-color: #2a2b2f;
+  color: #fff;
+}
+
+.video .carousel-indicators li {
+  bottom: -50px;
+  border-radius: 50%;
+  height: 13px;
+  width: 13px;
+}
+
+.video .carousel-indicators li {
+  background-color: #fff;
+}
+
+.video .carousel-indicators li.active {
+  background-color: #6ab571;
+}
+
+.video .carousel-inner .carousel-item h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.video .carousel-inner .carousel-item p {
+  text-align: justify;
+  line-height: 1.8;
+  text-transform: capitalize;
+}
+
+.video .carousel-inner .carousel-item .btn-success {
+  background-color: #6ab571;
+}
+/* End Style Video  */
+
+/* Start Style Count To  */
+.count {
+  background: url("https://image.ibb.co/jXtmpG/12.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  min-height: 250px;
+  color: #fff;
+  position: relative;
+  padding: 80px 0;
+}
+
+.count .overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.count .box {
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.count .box > span {
+  font-size: 35px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.count .box > p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+/* End Style Count To   */
+
+/* Start Style Services   */
+.service {
+  padding: 80px 0 40px;
+  background-color: #323338;
+  color: #fff;
+}
+
+.service h2 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.service h2 > span {
+  color: #6ab571;
+}
+
+.ser {
+  border: 1px solid #fff;
+  background-color: #fff;
+  width: 30%;
+  height: 1px;
+  margin: 15px auto 100px;
+  position: relative;
+}
+
+.ser::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  border: 1px ridge #fff;
+  background-color: #fff;
+  height: 10px;
+  width: 40px;
+  margin-left: -20px;
+}
+
+.service .row .box {
+  border: 1px solid rgba(192, 192, 194, 0.9);
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 10px 10px 0 rgba(192, 192, 194, 0.9);
+}
+
+.service .row .box .fa {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.service .row .box h4 {
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+.service .row .box p {
+  text-align: justify;
+  line-height: 1.8;
+  text-transform: capitalize;
+}
+/* End Style Services   */
+
+/* Start Style Portfolio */
+.port {
+  padding: 80px 0;
+  background-color: #2a2b2f;
+  color: #fff;
+}
+.port h2 {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.port h2 > span {
+  color: #6ab571;
+}
+
+.port .list-unstyled li {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  margin-right: 10px;
+  padding: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.port .list-unstyled li:hover,
+.port .list-unstyled li.active {
+  background-color: #6ab571;
+  border-color: #6ab571;
+}
+
+.port .container .row {
+  margin: 0 !important;
+}
+
+.port .container .col-lg-3,
+.port .container .col-md-4,
+.port .container .col-sm-6 {
+  padding: 0 !important;
+}
+
+.port .row .img > img {
+  width: 300px;
+  height: 250px;
+  transition: all 0.5s ease-in-out;
+}
+
+.port .row .img {
+  position: relative;
+  transition: all 0.6s ease-in-out;
+}
+
+.port .row .img .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 44, 48, 0.8);
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: all 0.8s ease-in-out;
+  transform: rotateY(180deg) scale(0.5);
+  cursor: pointer;
+}
+
+.port .row .img:hover .mask {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  transform: rotateY(0) scale(1);
+  transition: all 0.8s ease-in-out;
+}
+
+.port .row .img .mask .fa {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.port .row .img .mask h5 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.port .row .img {
+  overflow: hidden;
+}
+
+.port .row .img:hover img {
+  transform: scale(1.3) rotate(15deg);
+}
+
+/* End Style Portfolio   */
+
+/* Start Style Skills  */
+.skills {
+  background: url("https://image.ibb.co/dm3K9G/header_7.png") no-repeat center
+    center fixed;
+  background-size: cover;
+  min-height: 600px !important;
+  color: #fff !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills .ser {
+  margin: 15px auto 70px;
+}
+
+.skills .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 80px 0;
+}
+
+.skills h2 {
+  font-weight: bold;
+}
+
+.skills h2 > span {
+  color: #6ab571;
+}
+
+.skills .row .box h3 {
+  position: relative;
+}
+
+.skills .row .box h3::after {
+  content: "";
+  border-bottom: 2px solid #fff;
+  width: 90%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: 42px;
+  margin: 3px auto 0;
+  left: 8%;
+}
+.skills .row .box p {
+  text-align: justify;
+  margin-top: 30px;
+  line-height: 1.7;
+  text-transform: capitalize;
+}
+/* End Style Skills  */
+
+/* Start Style Team  */
+.team {
+  padding: 80px 0;
+  background-color: #2a2b2f;
+  color: #fff;
+}
+
+.team h2 {
+  font-weight: bold;
+}
+
+.team h2 > span {
+  color: #6ab571;
+}
+
+.team .card {
+  border-color: #4e595f;
+}
+
+.team .card img {
+  height: 250px;
+}
+
+.team .card .card-header,
+.team .card .card-body {
+  background-color: #2f3035;
+  border-color: #4e595f;
+}
+
+.team .card .card-header {
+  padding: 0.5rem;
+}
+
+.team .card .card-title {
+  font-size: 18px;
+}
+
+.team .card .card-subtitle {
+  font-size: 14px;
+}
+
+.team .card .card-body {
+  padding: 0.75rem;
+}
+
+.team .card .card-body p {
+  text-align: justify;
+  text-transform: capitalize;
+}
+
+.team .row .col-lg-3 {
+  padding: 0 !important;
+}
+
+.team .row .card > div {
+  overflow: hidden;
+}
+
+.team .row .card > div .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 44, 48, 0.8);
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: all 0.8s ease-in-out;
+  transform: rotateY(180deg) scale(0.5);
+  cursor: pointer;
+}
+
+.team .row .card > div:hover .mask {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  transform: rotateY(0) scale(1);
+  transition: all 0.8s ease-in-out;
+}
+
+.team .row .card > div .mask .fa {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 7px;
+  position: relative;
+  top: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.team .row .card > div .mask .fa:hover {
+  background-color: #6ab571;
+  border-color: #6ab571;
+}
+
+.team .row .card > div:hover img {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+/* End Style Team  */
+
+/* Start Style Follow  */
+.follow {
+  background: url("https://image.ibb.co/dm3K9G/header_7.png") no-repeat center
+    center fixed;
+  background-size: cover;
+  min-height: 350px;
+  position: relative;
+  color: #fff;
+}
+
+.follow .overlay {
+  padding: 100px 0;
+}
+
+.follow .fa {
+  border: 2px solid #6ab571;
+  border-radius: 50%;
+  color: #6ab571;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin-bottom: 35px;
+}
+
+.follow .btn-success {
+  background-color: transparent;
+  border-color: #4e595f;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.follow .btn-success:hover {
+  background-color: #6ab571;
+  border-color: #6ab571;
+}
+/* End Style Follow  */
+
+/* Start Style Price  */
+.price {
+  padding: 80px 0;
+  background-color: #323338;
+  color: #fff;
+  overflow: hidden;
+}
+
+.price h2 {
+  font-weight: bold;
+}
+
+.price h2 > span {
+  color: #6ab571;
+}
+
+.price .card {
+  background-color: #2a2b2f;
+}
+
+.price .card .card-body {
+  padding: 0;
+}
+
+.price .card .card-body .list-group li {
+  padding: 0.5rem;
+  color: #fff !important;
+}
+
+.price .card .card-body .list-group .list-group-item-dark {
+  background-color: #2a2b2f;
+}
+.price .card .card-body .list-group .list-group-item-light {
+  background-color: #2e2f34;
+}
+
+.price .btn-success {
+  background-color: transparent;
+  border-color: #4e595f;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.price .btn-success:hover {
+  background-color: #6ab571;
+  border-color: #6ab571;
+}
+
+.price .card .card-header .card-title {
+  color: #6ab571;
+  font-weight: bold;
+}
+.price .card .card-header .card-subtitle {
+  margin-top: 5px;
+}
+
+.price .card .card-header .card-subtitle > span {
+  font-size: 35px;
+  color: #6ab571;
+}
+
+/* End Style Price  */
+
+/* Start Style Posts  */
+.post {
+  padding: 80px 0;
+  background-color: #2a2b2f;
+  color: #fff;
+  overflow: hidden;
+}
+
+.post h2 {
+  font-weight: bold;
+}
+
+.post h2 > span {
+  color: #6ab571;
+}
+
+.post .card {
+  background-color: #2e2f34;
+  border-color: #4e595f;
+}
+
+.post .card img {
+  height: 190px;
+  background-size: cover;
+}
+
+.post .card .card-body {
+  padding: 0.75rem;
+}
+
+.post .card .card-title {
+  margin-top: 5px;
+}
+
+.post .card .card-body p {
+  text-align: justify;
+  text-transform: capitalize;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.post .btn-success {
+  background-color: transparent;
+  border-color: #4e595f;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.post .btn-success:hover {
+  background-color: #6ab571;
+  border-color: #6ab571;
+}
+/* End Style Posts  */
+
+/* Start Style Content  */
+.content {
+  padding: 80px 0 0;
+  background-color: #2e2f34;
+  color: #fff;
+}
+
+.content h2 {
+  font-weight: bold;
+}
+
+.content h2 > span {
+  color: #6ab571;
+}
+
+.content .row p {
+  text-align: justify;
+  line-height: 1.6;
+}
+.content .form-control {
+  border-color: #4e595f;
+}
+
+.content input,
+.content textarea,
+.content input:focus,
+.content textarea:focus {
+  background: transparent;
+}
+
+.content input:hover,
+.content textarea:hover,
+.content input:focus,
+.content textarea:focus {
+  box-shadow: none;
+  border-color: #6ab571;
+}
+
+.content .btn-success {
+  background-color: transparent;
+  border-color: #4e595f;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.content .btn-success:hover {
+  background-color: #6ab571;
+  border-color: #6ab571;
+}
+
+.content .map .row {
+  margin: 0 !important;
+}
+.content .map .col {
+  padding: 0 !important;
+}
+/* End Style Content  */
+
+/* Start Style Footer  */
+footer {
+  background-color: #2d2e33;
+  color: #fff;
+}
+/* End Style Footer  */
+
+/* Start Style Top  */
+.top .fa {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #6ab571;
+  border: 1px solid #6ab571;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+
+.top:hover .fa {
+  background-color: #4e595f;
+  border-color: #4e595f;
+}
+/* End Style Top  *
+
+
+
+
+/* Start Loading Page */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  color: #ffffff;
+  z-index: 99999;
+}
+
+.sk-cube-grid {
+  width: 55px;
+  height: 55px;
+  margin: 300px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #6ab571;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+/* End Loading Page */
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+  /* Start Section Slider */
+  #mySlider .carousel-control-prev-icon,
+  #mySlider .carousel-control-next-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  /* End Section About */
+
+  /* Start Section About */
+  .about .bor {
+    width: 75%;
+  }
+  /* End Section About */
+
+  /* Start Section Count */
+  .count {
+    padding: 50px 0;
+  }
+  /* End Section Count */
+
+  /* Start Section Service */
+  .service {
+    padding: 70px 0 10px;
+  }
+
+  .service .ser {
+    width: 75%;
+    margin: 15px auto 50px;
+  }
+
+  /* End Section Service */
+
+  /* Start Section Work */
+  .port {
+    padding: 70px 0 30px;
+  }
+
+  .port .ser {
+    width: 75%;
+    margin: 15px auto 50px;
+  }
+  /* End Section Work */
+
+  /* Start Section Skills */
+  .skills {
+    padding: 50px 0 50px;
+    height: 1660px !important;
+  }
+
+  .skills .ser {
+    width: 75%;
+    margin: 15px auto 60px;
+  }
+
+  .skills .box p {
+    text-align: center !important;
+  }
+  /* End Section Skills */
+
+  /* Start Section Team */
+  .team {
+    padding: 50px 0;
+  }
+
+  .team .ser {
+    width: 75%;
+    margin: 15px auto 60px;
+  }
+  /* End Section Team */
+
+  /* Start Section Price */
+  .price {
+    padding: 50px 0 35px;
+  }
+
+  .price .ser {
+    width: 75%;
+    margin: 15px auto 60px;
+  }
+  /* End Section Price */
+
+  /* Start Section Post */
+  .post {
+    padding: 50px 0 35px;
+  }
+
+  .post .ser {
+    width: 75%;
+    margin: 15px auto 60px;
+  }
+  /* End Section Post */
+
+  /* End Section Post */
+  .content {
+    padding: 50px 0 0;
+  }
+
+  .content .ser {
+    width: 75%;
+    margin: 15px auto 60px;
+  }
+  /* End Section Post */
+
+  /* End Section footer */
+  .footer > span {
+    font-size: 10px;
+  }
+  /* End Section footer */
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Start Section Count */
+  .count {
+    padding: 50px 0;
+  }
+  /* End Section Count */
+
+  /* Start Section Service */
+  .service {
+    padding: 70px 0 10px;
+  }
+
+  .service .ser {
+    margin: 15px auto 50px;
+  }
+  /* End Section Service */
+
+  /* Start Section Work */
+  .port {
+    padding: 70px 0 30px;
+  }
+
+  .port .ser {
+    margin: 15px auto 50px;
+  }
+  /* End Section Work */
+
+  /* Start Section Team */
+  .team {
+    padding: 50px 0;
+  }
+
+  .team .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Team */
+
+  /* Start Section Price */
+  .price {
+    padding: 50px 0 35px;
+  }
+
+  .price .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Price */
+
+  /* Start Section Post */
+  .post {
+    padding: 50px 0 35px;
+  }
+
+  .post .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Post */
+
+  /* End Section Post */
+  .content {
+    padding: 50px 0 0;
+  }
+
+  .content .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Post */
+
+  /* Start Section Skills */
+  .skills {
+    padding: 50px 0 50px;
+    height: 900px !important;
+  }
+
+  .skills .box p {
+    text-align: center !important;
+  }
+  /* End Section Skills */
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Start Section Count */
+  .count {
+    padding: 50px 0;
+  }
+  /* End Section Count */
+
+  /* Start Section Service */
+  .service {
+    padding: 70px 0 10px;
+  }
+
+  .service .ser {
+    margin: 15px auto 50px;
+  }
+  /* End Section Service */
+
+  /* Start Section Work */
+  .port {
+    padding: 70px 0 30px;
+  }
+
+  .port .ser {
+    margin: 15px auto 50px;
+  }
+  /* End Section Work */
+
+  /* Start Section Team */
+  .team {
+    padding: 50px 0;
+  }
+
+  .team .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Team */
+
+  /* Start Section Price */
+  .price {
+    padding: 50px 0 35px;
+  }
+
+  .price .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Price */
+
+  /* Start Section Post */
+  .post {
+    padding: 50px 0 35px;
+  }
+
+  .post .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Post */
+
+  /* End Section Post */
+  .content {
+    padding: 50px 0 0;
+  }
+
+  .content .ser {
+    margin: 15px auto 60px;
+  }
+  /* End Section Post */
+
+  /* Start Section Skills */
+  .skills {
+    padding: 50px 0 50px;
+    height: 900px !important;
+  }
+
+  .skills .box p {
+    text-align: center !important;
+  }
+  /* End Section Skills */
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Carousel Item  Height */
+  .video .carousel-inner .carousel-item {
+    height: 300px !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+  /* Carousel Item  Height */
+  .video .carousel-inner .carousel-item {
+    height: 300px !important;
+  }
+}
+
+</style>
+<body>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira">
+
+<!--Start Section Slider -->
+<section id="mySlider" class="carousel slide" data-ride="carousel">
+  <!--Carousel Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#mySlider" data-slide-to="0" class="active"></li>
+    <li data-target="#mySlider" data-slide-to="1"></li>
+    <li data-target="#mySlider" data-slide-to="2"></li>
+  </ol>
+
+  <!--Images-->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="overlay"></div>
+      <img src="https://image.ibb.co/n6fcww/slider_01.jpg" class="d-block w-100 h-100" alt="Image One" />
+      <div class="carousel-caption d-flex flex-column h-100 justify-content-center align-items-center">
+        <h3 class="color wow fadeIn animated d-none d-md-block" data-wow-duration="5s">MEGHNA</h3>
+        <p class="wow fadeIn animated d-none d-md-block" data-wow-duration="5s">WELCOME TO MEGHNA</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="overlay"></div>
+      <img src="https://image.ibb.co/ce71Ob/slider_02.jpg" class="d-block w-100 h-100" alt="images Two" />
+      <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+        <h3 class="wow fadeIn animated  d-none d-md-block" data-wow-duration="5s">HIGHLY RESPONSIVE</h3>
+        <p class="wow fadeIn animated  d-none d-md-block" data-wow-duration="5s">With all Mejor Browser support including IE 9</p>
+        <a type="button" class="btn btn-success wow fadeIn animated  d-none d-md-block" data-wow-duration="5s">GET STARTED</a>
+      </div>
+    </div>
+
+    <div class="carousel-item ">
+      <div class="overlay"></div>
+      <img src="https://image.ibb.co/ccZRpG/slider_03.jpg" class="d-block w-100 h-100" alt="Images Three" />
+      <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+        <h3 class="wow fadeIn animated  d-none d-md-block" data-wow-duration="5s">ONE PAGE PARALLAX HTML </h3>
+        <p class="wow fadeIn animated  d-none d-md-block" data-wow-duration="5s">Clean and Professional Design</p>
+        <a type="button" class="btn btn-success wow fadeIn animated  d-none d-md-block">LEARN MORE</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Left And Right Controls-->
+  <a href="#mySlider" class="carousel-control-prev" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+
+  <a href="#mySlider" class="carousel-control-next" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</section>
+<!--End Section Slider -->
+
+<!--Start Section Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+
+    <!--Brand name -->
+    <a href="#" class="navbar-brand">MEGHNA</a>
+    <!--Button Toggler-->
+    <button type="button" class="navbar-toggler" data-target="#myNavbar" data-toggle="collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Links -->
+    <div id="myNavbar" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a href="#" class="nav-link home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#about" class="nav-link" data-target="#about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#service" class="nav-link" data-target="#service">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#port" class="nav-link" data-target="#port">Portfolio</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#team" class="nav-link" data-target="#team">Team</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#price" class="nav-link" data-target="#price">Pricing</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#post" class="nav-link" data-target="#post">Blog</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#content" class="nav-link" data-target="#content">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- End Collapse -->
+  </div>
+  <!-- End  Container -->
+</nav>
+<!--End Section Navbar -->
+
+<!-- Start Section About -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="text-center wow fadeIn animated" data-wow-duration="5s" data-wow-offset="60">About <span>US</span></h2>
+    <div class="bor"></div>
+    <div class="row text-center">
+      <div class="col-lg wow fadeIn animated mb-5 mb-lg-0" data-wow-duration="5s" data-wow-offset="120">
+        <div class="icon-box">
+          <i class="fa fa-lightbulb-o fa-4x fa-fw " aria-hidden="true"></i>
+        </div>
+
+        <div class="about-info  mt-4">
+          <h3>We're Creative</h3>
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout
+          </p>
+        </div>
+        <!-- End About Info -->
+      </div>
+      <!-- End Box One -->
+
+      <div class="col-lg wow fadeIn animated mb-5 mb-lg-0" data-wow-duration="5s" data-wow-offset="120">
+        <div class="icon-box">
+          <i class="fa fa-users fa-4x fa-fw " aria-hidden="true"></i>
+        </div>
+        <div class="about-info mt-4">
+          <h3>We're Professional</h3>
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout
+          </p>
+        </div>
+        <!-- End About Info -->
+      </div>
+      <!-- End Box Two -->
+
+      <div class="col-lg wow fadeIn animated" data-wow-duration="5s" data-wow-offset="120">
+        <div class="icon-box">
+          <i class="fa fa-flash fa-4x fa-fw " aria-hidden="true"></i>
+        </div>
+        <div class="about-info  mt-4">
+          <h3>We're Creative</h3>
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout
+          </p>
+        </div>
+        <!-- End About Info -->
+      </div>
+      <!-- End Box Three -->
+    </div>
+    <!-- End Row -->
+  </div>
+  <!-- End Class Container -->
+</section>
+<!-- End Section About -->
+
+<!--Start Section Video-->
+<section class="video">
+  <div class="container">
+    <div id="myVideo" class="carousel slide" data-ride="carousel">
+      <!--Carousel Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#myVideo" class="active" data-slide-to="0"></li>
+        <li data-target="#myVideo" data-slide-to="1"></li>
+        <li data-target="#myVideo" data-slide-to="2"></li>
+      </ol>
+
+      <!--Videos And information -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EqifJ2jr1wg?ecver=1" allowfullscreen></iframe>
+              </div>
+            </div> <!-- End Video -->
+
+            <div class="col-lg-7">
+              <h4>Main Features of Meghna</h4>
+              <p>
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+              </p>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+              </p>
+              <a type="button" class="btn btn-success">Learn More </a>
+              <a type="button" class="btn btn-success ml-1">Purchase Theme</a>
+            </div> <!-- End Information -->
+          </div> <!-- End Row One -->
+        </div> <!-- End Carousel Item One -->
+
+        <div class="carousel-item ">
+          <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/DkweB7DCijI" allowfullscreen></iframe>
+              </div>
+            </div> <!-- End Video -->
+
+            <div class="col-lg-7">
+              <h4>Main Features of Meghna</h4>
+              <p>
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+              </p>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+              </p>
+              <a type="button" class="btn btn-success">Learn More </a>
+              <a type="button" class="btn btn-success ml-1">Purchase Theme</a>
+            </div> <!-- End Information -->
+          </div> <!-- End Row One -->
+        </div> <!-- End Carousel ITem Two -->
+
+        <div class="carousel-item ">
+          <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0 wow bounceInRight">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/fHOzy5-hu-o" allowfullscreen></iframe>
+              </div>
+            </div> <!-- End Video -->
+
+            <div class="col-lg-7">
+              <h4>Main Features of Meghna</h4>
+              <p>
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+              </p>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+              </p>
+              <a type="button" class="btn btn-success">Learn More </a>
+              <a type="button" class="btn btn-success ml-1">Purchase Theme</a>
+            </div> <!-- End Information -->
+          </div> <!-- End Row One -->
+        </div> <!-- End Carousel ITem Three -->
+
+      </div> <!-- Carousel Inner -->
+    </div> <!-- End Video -->
+  </div> <!-- End Container -->
+</section>
+<!--End Section Video-->
+
+<!-- Start Section Count To -->
+<section class="count text-center">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg col-md-6 wow fadeIn animated mb-3 mb-lg-0" data-wow-duration="2s" data-wow-offset="75">
+        <div class="box mb-3 mb-lg-0">
+          <span class="timer" data-from="30" data-to="1000" data-speed="12000">30</span>
+          <i class="fa fa-users fa-fw fa-3x" aria-hidden="true"></i>
+          <p>Happy Client</p>
+        </div>
+      </div> <!-- End Box One -->
+
+      <div class="col-lg col-md-6 wow fadeIn animated mb-3 mb-lg-0" data-wow-duration="2s" data-wow-offset="75" data-wow-delay="1s">
+        <div class="box mb-3 mb-lg-0">
+          <span class="timer" data-from="15" data-to="1250" data-speed="12000">15</span>
+          <i class="fa fa-check-square fa-3x fa-fw" aria-hidden="true"></i>
+          <p>Projects completed</p>
+        </div>
+      </div> <!-- End Box Two -->
+
+      <div class="col-lg col-md-6 wow fadeIn animated mb-3 mb-lg-0" data-wow-duration="2s" data-wow-offset="75" data-wow-delay="2s">
+        <div class="box mb-3 mb-lg-0">
+          <span class="timer" data-from="5" data-to="1800" data-speed="12000">5</span>
+          <i class="fa fa-thumbs-up fa-3x fa-fw" aria-hidden="true"></i>
+          <p>Positive feedback</p>
+        </div>
+      </div> <!-- End Box Three -->
+
+      <div class="col-lg col-md-6 wow fadeIn animated mb-3 mb-lg-0" data-wow-duration="2s" data-wow-offset="75" data-wow-delay="3s">
+        <div class="box mb-3 mb-lg-0">
+          <span class="timer" data-from="10" data-to="2500" data-speed="12000">10</span>
+          <i class="fa fa-coffee fa-3x fa-fw" aria-hidden="true"></i>
+          <p>Happy Client</p>
+        </div>
+      </div> <!-- End Box Four -->
+    </div> <!-- End Row -->
+  </div> <!-- End Container -->
+</section>
+<!-- Start Section Count To -->
+
+<!--Start Section Services -->
+<section id="service" class="service text-center">
+  <div class="container">
+    <h2 class="wow fadeIn animated" data-wow-duration="2s" data-wow-offset="60">Our <span>Services</span></h2>
+    <div class="ser"></div>
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 mb-5 wow slideInLeft animated" data-wow-duration="2s" data-wow-offset="70">
+        <div class="box">
+          <i class="fa fa-wordpress fa-4x fa-fw" aria-hidden="true"></i>
+          <h4>Wordpress Themes</h4>
+          <p>
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          </p>
+        </div> <!-- End Box One -->
+      </div> <!-- Column One -->
+
+      <div class="col-lg-4 col-sm-6 mb-5 wow bounceIn animated" data-wow-duration="2s" data-wow-offset="70">
+        <div class="box">
+          <i class="fa fa-television fa-4x fa-fw" aria-hidden="true"></i>
+          <h4>Responsive Design</h4>
+          <p>
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          </p>
+        </div>
+      </div> <!-- Column Two -->
+
+      <div class="col-lg-4 col-sm-6 mb-5 wow slideInRight animated" data-wow-duration="2s" data-wow-offset="70">
+        <div class="box">
+          <i class="fa fa-play fa-4x fa-fw" aria-hidden="true"></i>
+          <h4>Media & Advertisement </h4>
+          <p>
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          </p>
+        </div>
+      </div> <!-- Column Three -->
+
+      <div class="col-lg-4 col-sm-6 mb-5 wow slideInLeft animated" data-duration="2s" data-wow-offset="85">
+        <div class="box">
+          <i class="fa fa-eye fa-4x fa-fw" aria-hidden="true"></i>
+          <h4>Graphic Design</h4>
+          <p>
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          </p>
+        </div>
+      </div> <!-- Column One -->
+
+      <div class="col-lg-4 col-sm-6 mb-5 wow bounceIn animated" data-wow-duration="2s" data-wow-offset="85">
+        <div class="box">
+          <i class="fa fa-android fa-4x fa-fw" aria-hidden="true"></i>
+          <h4>Apps Development</h4>
+          <p>
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          </p>
+        </div>
+      </div> <!-- Column Two -->
+
+      <div class="col-lg-4 col-sm-6  mb-5 wow slideInRight animated" data-wow-duration="2s" data-wow-offset="85">
+        <div class="box">
+          <i class="fa fa-link fa-4x fa-fw" aria-hidden="true"></i>
+          <h4>Networking</h4>
+          <p>
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          </p>
+        </div>
+      </div> <!-- Column Three -->
+    </div>
+  </div> <!-- End Container -->
+</section>
+<!--End Section Services-->
+
+<!-- Start Section Portfolio -->
+<section id="port" class="port text-center">
+  <h2 class="wow fadeIn animated" data-wow-duration="2s" data-wow-offset="60">Our <span>Work</span></h2>
+  <div class="ser"></div>
+
+  <div class="container ">
+    <ul class="row list-unstyled text-center mb-5">
+      <li class="col-md active filter" data-filter="all"> All </li>
+      <li class="col-md filter" data-filter=".mobile"> Mobile App </li>
+      <li class="col-md filter" data-filter=".web"> Web Design </li>
+      <li class="col-md filter" data-filter=".photo"> Photoshop </li>
+      <li class="col-md filter" data-filter=".other"> Illustrator </li>
+    </ul>
+  </div> <!-- End Container -->
+
+  <div id="shuffle" class="container">
+    <div class="port-box mt-5">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix web wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/kuAD3b/1.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix photo wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/i1kfib/2.jpg" class="d-block w-100 " />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix web wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/hWe6Ob/3.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix mobile wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/gzqrpG/4.jpg" class="d-block w-100 " />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix other wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/cWG9bw/5.jpg" class="d-block w-100 " />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix mobile wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/cd2hww/6.jpg" class="d-block w-100 " />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix photo wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/nftK9G/7.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix other wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/hfVMOb/8.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix web wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/hz1T3b/9.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix photo wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/ckzsUG/10.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix other wow faseIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/iTqAGw/11.jpg" class="d-block w-100" />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 img mix mobile wow fadeIn animated" data-wow-duration="2s" data-wow-offset="80">
+          <div class="mask">
+            <i class="fa fa-plus fa-2x fa-fw" aria-hidden="true"></i>
+            <h5>Mamoun Adil </h5>
+          </div>
+          <img src="https://image.ibb.co/jXtmpG/12.jpg" class="d-block w-100" />
+        </div>
+
+      </div> <!-- End Row -->
+    </div> <!-- Port Box -->
+  </div> <!-- End Container Fluid -->
+</section>
+<!-- End Section Portfolio -->
+
+<!--Start Section Skills -->
+<section id="skills" class="skills text-center">
+  <div class="overlay">
+    <div class="container">
+      <h2 class="wow bounceIn animated" data-wow-duration="2s" data-offset="60">Our <span>Skills</span></h2>
+      <div class="ser"></div>
+
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 wow slideInLeft animated mb-3 mb-lg-0" data-wow-duration="1s" data-wow-offset="90">
+          <div class="box">
+            <div class="sk">
+              <img src="https://image.ibb.co/kqY83b/s_85.png" class="d-block mx-auto" />
+            </div>
+            <h3 class="mt-3"><i class="fa fa-wordpress fa-lg fa-fw" aria-hidden="true"></i> wordpress</h3>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            </p>
+          </div>
+        </div> <!-- End Col One -->
+
+        <div class="col-lg-3 col-sm-6 wow slideInUp animate mb-3 mb-lg-0" data-wow-duration="1s" data-wow-offset="90">
+          <div class="box text-center">
+            <div class="sk">
+              <img src="https://image.ibb.co/iwaz9G/s_90.png" class="d-block mx-auto" />
+            </div>
+            <h3 class="mt-3"><i class="fa fa-html5 fa-lg fa-fw" aria-hidden="true"></i> HTML5</h3>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            </p>
+          </div>
+        </div> <!-- End Col Two -->
+
+        <div class="col-lg-3 col-sm-6 wow slideInDown animated mb-3 mb-lg-0" data-wow-duration="1s" data-wow-offset="90">
+          <div class="box text-center">
+            <div class="sk">
+              <img src="https://image.ibb.co/d03VGw/s_80.png" class="d-block mx-auto" />
+            </div>
+            <h3 class="mt-3"><i class="fa fa-android fa-lg fa-fw" aria-hidden="true"></i> Android</h3>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            </p>
+          </div>
+        </div> <!-- End Col Three -->
+
+        <div class="col-lg-3 col-sm-6 wow slideInRight animated" data-wow-duration="1s" data-wow-offset="90">
+          <div class="box text-center">
+            <div class="sk">
+              <img src="https://image.ibb.co/b3YmpG/s_70.png" class="d-block mx-auto" />
+            </div>
+            <h3 class="mt-3"><i class="fa fa-apple fa-lg fa-fw" aria-hidden="true"></i> IOS</h3>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            </p>
+          </div>
+        </div> <!-- End Col Four -->
+      </div> <!-- End Row -->
+    </div> <!-- End Container -->
+  </div>
+</section>
+<!--End Section Skills -->
+
+<!-- Start Section Team -->
+<section id="team" class="team text-center">
+  <div class="container">
+    <h2 class="wow zoomIn animated" data-wow-offset="60">Our <span>Team</span></h2>
+    <div class="ser"></div>
+
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 wow zoomInLeft animated mb-4 mb-lg-0" data-wow-offset="80">
+        <div class="card mr-2">
+          <div class="position-relative">
+            <div class="mask">
+              <i class="fa fa-facebook fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-twitter fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-youtube fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-instagram fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-github fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+            </div>
+            <img class="card-img-top d-block w-100" src="https://image.ibb.co/j6Vcww/member_1.jpg" alt="Member One" />
+          </div>
+          <div class="card-header">
+            <h5 class="card-title">Abul Mal Muhit</h5>
+            <h6 class="card-subtitle">CEO/Founder</h6>
+          </div>
+          <div class="card-body">
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+          </div>
+        </div>
+      </div> <!-- End Col One -->
+
+      <div class="col-lg-3 col-sm-6 wow zoomInDown animated mb-4 mb-lg-0" data-wow-offset="80">
+        <div class="card mr-2">
+          <div class="position-relative">
+            <div class="mask">
+              <i class="fa fa-facebook fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-twitter fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-youtube fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-instagram fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-github fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+            </div>
+            <img class="card-img-top d-block w-100" src="https://image.ibb.co/m5KFib/member_2.jpg" alt="Member One" />
+          </div>
+          <div class="card-header">
+            <h5 class="card-title">Frank Miller</h5>
+            <h6 class="card-subtitle">Manager</h6>
+          </div>
+          <div class="card-body">
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+          </div>
+        </div>
+      </div> <!-- End Col Two -->
+
+      <div class="col-lg-3 col-sm-6 wow zoomInUp animated mb-4 mb-lg-0" data-wow-offset="80">
+        <div class="card mr-2">
+          <div class="position-relative">
+            <div class="mask">
+              <i class="fa fa-facebook fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-twitter fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-youtube fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-instagram fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-github fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+            </div>
+            <img class="card-img-top d-block w-100" src="https://image.ibb.co/eYMjbw/member_3.jpg" alt="Member One" />
+          </div>
+          <div class="card-header">
+            <h5 class="card-title">Michael Jonson</h5>
+            <h6 class="card-subtitle">Web Developer</h6>
+          </div>
+          <div class="card-body">
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+          </div>
+        </div>
+      </div> <!-- End Col Three -->
+
+      <div class="col-lg-3 col-sm-6 wow zoomInRight animated mb-4 mb-lg-0" data-wow-offset="80">
+        <div class="card mr-2">
+          <div class="position-relative">
+            <div class="mask">
+              <i class="fa fa-facebook fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-twitter fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-youtube fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-instagram fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+              <i class="fa fa-github fa-lg fa-fw d-inline-block" aria-hidden="true"></i>
+            </div>
+            <img class="card-img-top d-block w-100" src="https://image.ibb.co/fzt83b/member_4.jpg" alt="Member One" />
+          </div>
+          <div class="card-header">
+            <h5 class="card-title">Mo. Kha. Alamgir</h5>
+            <h6 class="card-subtitle">SEO Specialist</h6>
+          </div>
+          <div class="card-body">
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+          </div>
+        </div>
+      </div> <!-- End Col Four -->
+    </div> <!-- End Row -->
+  </div> <!-- End Container -->
+</section>
+<!-- End Section Team -->
+
+<!--Start Section Follow-->
+<section class="follow text-center ">
+  <div class="overlay">
+    <i class="fa fa-twitter fa-3x fa-fw d-block mx-auto wow bounceIn animated" data-wow-duration="2s" data-wow-offset="80" aria-hidden="true"></i>
+    <button type="button" class="btn btn-success wow swing animated" data-wow-duration="2s" data-wow-offset="80">Follow Us</button>
+  </div>
+</section>
+<!--End Section Follow-->
+
+<!--Start Section Pricing -->
+<section id="price" class="price text-center">
+  <div class="container">
+    <h2 class="wow fadeIn animated" data-wow-duration="2s" data-wow-offset="60">Our Greatest <span> Plans</span></h2>
+    <div class="ser"></div>
+
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 wow slideInLeft animated mb-4 mb-lg-0" data-wow-duration="1s" data-wow-offset="80">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Free</h4>
+            <h5 class="card-subtitle">From <span>$99</span> Month</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-dark">1GB Disk Space</li>
+              <li class="list-group-item list-group-item-light">10 Email Account</li>
+              <li class="list-group-item list-group-item-dark">Script Installer</li>
+              <li class="list-group-item list-group-item-light">1 GB Storage</li>
+              <li class="list-group-item list-group-item-dark">10 GB Bandwidth</li>
+              <li class="list-group-item list-group-item-light">24/7 Tech Support</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-success">SignUp</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col One -->
+
+      <div class="col-lg-3 col-sm-6 wow slideInDown mb-4 mb-lg-0" data-wow-duration="1s" data-wow-offset="80">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Silver</h4>
+            <h5 class="card-subtitle">From <span>$149</span> Month</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-dark">1GB Disk Space</li>
+              <li class="list-group-item list-group-item-light">10 Email Account</li>
+              <li class="list-group-item list-group-item-dark">Script Installer</li>
+              <li class="list-group-item list-group-item-light">1 GB Storage</li>
+              <li class="list-group-item list-group-item-dark">10 GB Bandwidth</li>
+              <li class="list-group-item list-group-item-light">24/7 Tech Support</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-success">SignUp</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col Two -->
+
+      <div class="col-lg-3 col-sm-6 wow slideInUp animated mb-4 mb-lg-0" data-wow-duration="1s" data-wow-offset="80">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Gold</h4>
+            <h5 class="card-subtitle">From <span>$199</span> Month</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-dark">1GB Disk Space</li>
+              <li class="list-group-item list-group-item-light">10 Email Account</li>
+              <li class="list-group-item list-group-item-dark">Script Installer</li>
+              <li class="list-group-item list-group-item-light">1 GB Storage</li>
+              <li class="list-group-item list-group-item-dark">10 GB Bandwidth</li>
+              <li class="list-group-item list-group-item-light">24/7 Tech Support</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-success">SignUp</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col Three -->
+
+      <div class="col-lg-3 col-sm-6 wow fadeInRight animated mb-4 mb-lg-0" data-wow-duration="1s" data-wow-offset="80">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Platinum</h4>
+            <h5 class="card-subtitle">From <span>$299</span> Month</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-dark">1GB Disk Space</li>
+              <li class="list-group-item list-group-item-light">10 Email Account</li>
+              <li class="list-group-item list-group-item-dark">Script Installer</li>
+              <li class="list-group-item list-group-item-light">1 GB Storage</li>
+              <li class="list-group-item list-group-item-dark">10 GB Bandwidth</li>
+              <li class="list-group-item list-group-item-light">24/7 Tech Support</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-success">SignUp</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col Four -->
+    </div> <!-- End Row -->
+  </div> <!-- End Container -->
+</section>
+<!--End Section Pricing -->
+
+<!--Start Section Post -->
+<section id="post" class="post ">
+  <div class="container">
+    <h2 class="text-center wow fadeIn animated" data-wow-duration="2s" data-wow-offset="60">Latest <span> Posts</span></h2>
+    <div class="ser"></div>
+
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 wow bounceInLeft animated mb-4 mb-lg-0" data-wow-duration="2s" data-wow-offset="80">
+        <div class="card">
+          <img src="https://image.ibb.co/iUmjbw/post_01.jpg" class="card-img-top d-block w-100" alt="Post One" />
+          <div class="card-body">
+            <h5 class="card-title">Simple Image Post</h5>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+            <button type="button" class="btn btn-success">Read More</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col -->
+
+      <div class="col-lg-3 col-sm-6 wow bounceInUp animated mb-4 mb-lg-0" data-wow-duration="2s" data-wow-offset="80">
+        <div class="card">
+          <img src="https://image.ibb.co/jXtmpG/12.jpg" class="card-img-top d-block w-100" alt="Post One" />
+          <div class="card-body">
+            <h5 class="card-title">Simple Image Post</h5>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+            <button type="button" class="btn btn-success">Read More</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col -->
+
+      <div class="col-lg-3 col-sm-6 wow bounceInDown animated mb-4 mb-lg-0" data-wow-duration="2s" data-wow-offset="80">
+        <div class="card">
+          <img src="https://image.ibb.co/mBZFib/post_03.jpg" class="card-img-top d-block w-100" alt="Post One" />
+          <div class="card-body">
+            <h5 class="card-title">Simple Image Post</h5>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+            <button type="button" class="btn btn-success">Read More</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col -->
+
+      <div class="col-lg-3 col-sm-6 wow bounceInRight animated mb-4 mb-lg-0" data-wow-duration="2s" data-wow-offset="80">
+        <div class="card">
+          <img src="https://image.ibb.co/kqnqGw/post_04.jpg" class="card-img-top d-block w-100" alt="Post One" />
+          <div class="card-body">
+            <h5 class="card-title">Simple Image Post</h5>
+            <p>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+            </p>
+            <button type="button" class="btn btn-success">Read More</button>
+          </div>
+        </div> <!-- End Card -->
+      </div> <!-- End Col -->
+    </div>
+  </div> <!-- End Container -->
+</section>
+<!--End Section Post -->
+
+<!--Start Section Content -->
+<section id="content" class="content">
+  <div class="container">
+    <h2 class="text-center wow fadeIn animated" data-wow-duration="2s" data-wow-offswt="60">Get In <span> Touch</span></h2>
+    <div class="ser"></div>
+
+    <div class="row">
+      <div class="col-lg col-md-12 wow slideInLeft animated mb-4 mb-lg-0" data-wow-duration="1s" data-wow-offset="80">
+        <h5>Content Details</h5>
+        <p>
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages release of Letraset
+        </p>
+
+        <div class="media mt-4 mb-3">
+          <i class="fa fa-home fa-lg fa-fw mr-3 d-inline-block"></i>
+          <div class="media-body">
+            <span class="d-inline-block">Khaja Road, Bayzid, Chittagong, Bangladesh</span>
+          </div>
+        </div>
+
+        <div class="media mb-3">
+          <i class="fa fa-phone fa-lg fa-fw mr-3 d-inline-block"></i>
+          <div class="media-body">
+            <span class="d-inline-block">Phone : +880-31-000-000</span>
+          </div>
+        </div>
+        <div class="media mb-3">
+          <i class="fa fa-fax fa-lg fa-fw mr-3 d-inline-block"></i>
+          <div class="media-body">
+            <span class="d-inline-block">Fax : +880-31-000-000</span>
+          </div>
+        </div>
+        <div class="media mb-3">
+          <i class="fa fa-envelope-o fa-lg fa-fw mr-3 d-inline-block"></i>
+          <div class="media-body">
+            <span class="d-inline-block">Email : hello@meghna.com</span>
+          </div>
+        </div>
+      </div> <!-- End Col -->
+
+      <div class="col-lg col-md-12 wow slideInRight animated" data-wow-duration="1s" data-wow-offset="80">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Name" />
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Email" />
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Subject" />
+          </div>
+
+          <textarea placeholder="message" rows="5" class="form-control"></textarea>
+
+          <button type="button" class="btn btn-success d-block mt-3 w-100"><i class="fa fa-send fa-lg fa-fw mr-2"></i>Send Message</button>
+        </form>
+      </div> <!-- End Col -->
+    </div> <!-- End Row -->
+  </div> <!-- End Container -->
+  <div class="map mt-5 wow fadeIn animated" data-wow-duration="2s" data-wow-offset="60">
+    <div class="row">
+      <div class="col">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246059.68016218924!2d32.43250827751788!3d15.50150099388366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e8fde9837cabf%3A0x191f55de7e67db40!2sKhartoum%2C+Sudan!5e0!3m2!1sen!2ssa!4v1516700053450" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Section Content -->
+
+<!--Start Section Map -->
+<footer class="text-center">
+  <span class="d-inline-block p-2"> CopyRight <sup>&copy;</sup> 2017 For Mamoun Adil Mamoun All Right Reversed </span>
+</footer>
+<!--End Section Map -->
+
+<!--Go To Top -->
+<div class="top">
+  <i class="fa fa-angle-double-up fa-2x fa-fw" aria-hidden="true"></i>
+</div>
+<!--Go To Top -->
+
+<!--Start loading Page -->
+<section class="loading">
+  <div class="sk-cube-grid">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+  </div>
+</section>
+<!--End loading Page -->
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/nicescroll@3.7.4/jquery.nicescroll.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.2.2/mixitup.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+  var wow = new WOW();
+  wow.init();
+</script>
+</body>
+<script>
+/*global $, alert, console  */
+$(document).ready(function () {
+  "use strict";
+  // Slider Height
+
+  // Page Loading
+  $(window).on("load", function () {
+    $(".loading .sk-cube-grid").fadeOut(1000, function () {
+      $(this)
+        .parent()
+        .fadeOut(1000, function () {
+          $("body").css("overflow", "auto");
+          $(this).remove();
+        });
+    });
+  });
+
+  var winH = $(window).height();
+  $(".carousel-item").height(winH);
+
+  // Change Active
+  $("nav .navbar-nav .nav-item").on("click", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+  });
+
+  $("nav ul li .home").on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: 0
+      },
+      1500
+    );
+  });
+  // Go To The Section
+  $("nav ul li a").on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: $($(this).data("target")).offset().top
+      },
+      1500
+    );
+  });
+
+  // Go To Top
+  $(window).scroll(function () {
+    if ($(this).scrollTop() <= $(".about").offset().top - 250) {
+      $(".top .fa").fadeOut();
+    } else {
+      $(".top .fa").fadeIn();
+    }
+  });
+
+  $(".top .fa").on("click", function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0
+      },
+      1500
+    );
+  });
+
+  // Trigger Count To
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > $(".video").offset().top + 150) {
+      $(".timer").countTo();
+    }
+  });
+
+  $(".port .list-unstyled li").on("click", function () {
+    $(this).addClass("active").siblings("li").removeClass("active");
+  });
+
+  // Trigger MixitUp Plugin
+  window.mixitup("#shuffle");
+
+  // Trigger NiceScroll
+  $("body").niceScroll({
+    cursorcolor: "#6AB571",
+    cursorborder: "1px solid #6AB571",
+    cursorwidth: "7px",
+    cursorminheight: 40
+  });
+
+  $(".carousel").carousel({
+    pause: "hover",
+    interval: 3000
+  });
+});
+
+</script>
+</html>
