@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/CSSRulePlugin.min.js"></script>
+    <title>Document</title>
+</head><style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.container {
+  overflow: hidden;
+  min-height: 200vh;
+}
+
+.pop-up {
+  height: 100px;
+  width: 50%;
+  border-radius: 10px;
+  margin: 5px auto;
+  position: relative;
+}
+
+.pop-up div {
+  color: white;
+  line-height: 100px;
+  padding-left: 10%;
+  font-family: "Roboto", sans-serif;
+}
+
+.close {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 5px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  outline: none;
+}
+
+#one {
+  background: salmon;
+}
+
+#two {
+  background: orange;
+}
+
+#three {
+  background: skyblue;
+}
+
+#four {
+  background: #405cbf;
+}
+
+#five {
+  background: blue;
+  position: relative;
+}
+
+#five:before {
+  content: "";
+  display: none;
+  background: blue;
+  height: 100px;
+  width: 50%;
+  position: absolute;
+  border-radius: 10px 0px 0px 10px;
+}
+
+#five:after {
+  content: "";
+  display: none;
+  background: blue;
+  height: 100px;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#six {
+  background: darkblue;
+  position: relative;
+}
+
+#six span {
+  background: darkblue;
+  height: 100px;
+  width: 10%;
+  border-radius: 0%;
+  top: 0;
+  position: absolute;
+}
+
+#last {
+  background: #030b4d;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="pop-up animate" id="one">
+          <button class="close one">
+            x
+          </button>
+          <div>this one fades</div>
+        </div>
+        <div class="pop-up animate" id="two">
+          <button class="close two">
+            x
+          </button>
+          <div>this one gets swiped</div>
+        </div>
+        <div class="pop-up animate" id="three">
+          <button class="close three">
+            x
+          </button>
+          <div>this one spins</div>
+        </div>
+        <div class="pop-up animate" id="four">
+          <button class="close four">
+            x
+          </button>
+          <div>and so does this one</div>
+        </div>
+        <div class="pop-up animate" id="five">
+          <button class="close five">
+            x
+          </button>
+          <div>this one breaks in two</div>
+        </div>
+        <div class="pop-up animate" id="six">
+          <button class="close six">
+            x
+          </button>
+          <div>this one breaks apart</div>
+        </div>
+        <div class="pop-up animate" id="last">
+          <button class="close last">
+            x
+          </button>
+          <div>this one falls</div>
+        </div>
+      </div>
+</body>
+<script>
+    let one = document.querySelector(".one");
+let two = document.querySelector(".two");
+let three = document.querySelector(".three");
+let four = document.querySelector(".four");
+let five = document.querySelector(".five");
+let six = document.querySelector(".six");
+let last = document.querySelector(".last");
+
+one.onclick = function () {
+  let tl = gsap.timeline();
+  tl.to("#one", 1, { opacity: 0 });
+  tl.to("#one", 0.75, { height: 0 });
+};
+
+two.onclick = function () {
+  let tl = gsap.timeline();
+  tl.to("#two", 1, { x: 900 });
+  tl.to("#two", 0.75, { height: 0 });
+};
+
+three.onclick = function () {
+  let tl = gsap.timeline();
+  tl.to("#three", 2, { rotateY: 100 });
+  tl.to("#three", 1, { rotateY: 80 });
+  tl.to("#three", 1, { rotateY: 90 });
+  tl.to("#three", 0.75, { height: 0 });
+};
+
+four.onclick = function () {
+  let tl = gsap.timeline();
+  tl.to("#four", 1, { rotateX: 100 });
+  tl.to("#four", 0.5, { rotateX: 80 });
+  tl.to("#four", 0.5, { rotateX: 90 });
+  tl.to("#four", 0.75, { height: 0 });
+};
+
+five.onclick = function () {
+  let b = CSSRulePlugin.getRule("#five:before");
+  let a = CSSRulePlugin.getRule("#five:after");
+  let tl = gsap.timeline();
+  tl.set("#five", { background: "white" });
+  tl.set(b, {
+    display: "inline-block",
+    transformOrigin: "right"
+  });
+  tl.set(a, {
+    display: "inline-block",
+    transformOrigin: "left"
+  });
+  tl.to(
+    b,
+    1,
+    {
+      cssRule: {
+        x: -500
+      }
+    },
+    0
+  );
+  tl.to(
+    a,
+    1,
+    {
+      cssRule: {
+        x: 500
+      }
+    },
+    0
+  );
+  tl.to("#five", 0.75, { height: 0 });
+};
+
+six.onclick = function () {
+  let tl = gsap.timeline();
+  let parent = document.getElementById("six");
+  tl.set("#six", { background: "white" });
+  for (let i = 0; i < 10; i++) {
+    let span = document.createElement("span");
+    span.classList.add("squares");
+    parent.append(span);
+    span.style.left = i * 10 + "%";
+    tl.to(
+      span,
+      0.75,
+      {
+        background: "white",
+        rotateZ: -45
+      },
+      i * 0.3
+    );
+  }
+  tl.to("#six", 0.75, { height: 0 }, "+=1");
+};
+
+last.onclick = function () {
+  let tl = gsap.timeline();
+  tl.set("#last", {
+    transformOrigin: "left"
+  });
+  tl.to("#last", 1, { rotateZ: 100 });
+  tl.to("#last", 1, { rotateZ: 80 });
+  tl.to("#last", 1, { rotateZ: 90 });
+  tl.to("#last", 1, { y: 500 });
+  tl.addLabel("fall", "<");
+  tl.to(
+    "#last",
+    1,
+    {
+      background: "white"
+    },
+    "fall"
+  );
+};
+
+</script>
+</html>
