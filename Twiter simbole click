@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+:root {
+  --blur: 8px;
+  --shine-blur: calc(var(--blur) * 4);
+  --size: 25vmin;
+  --transition: 0.1s;
+  --depth: 3vmin;
+  --icon-size: 75%;
+  --radius: 24%;
+  --shine: rgba(255,255,255,0.85);
+  --button-bg: rgba(0,0,0,0.025);
+  --shadow-bg: rgba(0,0,0,0.115);
+  --shadow-icon: rgba(0,0,0,0.35);
+  --bg: #e8f4fd;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  touch-action: none;
+  overflow: hidden;
+}
+body:before {
+  content: '';
+  position: absolute;
+  height: 300vh;
+  width: 300vw;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, calc(var(--size) * -1));
+  background: var(--bg);
+}
+.scene {
+  height: var(--size);
+  position: relative;
+  width: var(--size);
+  transform: rotateX(-40deg) rotateY(18deg) rotateX(90deg);
+}
+.button {
+  cursor: pointer;
+  outline: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: none;
+}
+.button__content,
+.button__shadow {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+}
+.button__content {
+  --fill: #53abee;
+  background: var(--button-bg);
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  transition: transform var(--transition);
+  transform: translate3d(-50%, -50%, var(--depth));
+}
+.button__shadow {
+  --fill: var(--shadow-icon);
+  transition: filter var(--transition);
+  background: var(--shadow-bg);
+  filter: blur(var(--blur));
+}
+.button__shine {
+  height: calc(var(--size) * 0.5);
+  position: absolute;
+  width: calc(var(--size) * 0.5);
+  background: var(--shine);
+  border-radius: 50%;
+  top: calc(var(--y, -150) * 1%);
+  left: calc(var(--x, -150) * 1%);
+  filter: blur(var(--shine-blur)) brightness(1.25);
+  transform: translate3d(-50%, -50%, 1vmin);
+  z-index: 2;
+}
+.button__icon {
+  height: var(--icon-size);
+  fill: var(--fill);
+  width: var(--icon-size);
+}
+.button:active {
+  --blur: 0px;
+  --depth: 0vmin;
+}
+
+</style>
+<body>
+  
+<div class="scene">
+  <button class="button"><span class="button__shadow">
+      <svg class="button__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+        <title>Twitter icon</title>
+        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+      </svg></span><span class="button__content">
+      <svg class="button__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+        <title>Twitter icon</title>
+        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+      </svg><span class="button__shine"></span></span></button>
+</div>
+</body>
+<script>
+import gsap from 'https://cdn.skypack.dev/gsap';
+
+const {
+  set,
+  utils: { mapRange } } =
+gsap;
+
+const BUTTON = document.querySelector('.button');
+const CONTENT = document.querySelector('.button__content');
+// CONTENT.addEventListener('pointermove', ({ x, y }) => {
+// })
+
+const LIMIT = 5;
+
+const UPDATE = ({ x, y }) => {
+  const BOUNDS = CONTENT.getBoundingClientRect();
+
+  const POS_X = (x - BOUNDS.x) / BOUNDS.width;
+  const POS_Y = (y - BOUNDS.y) / BOUNDS.height;
+
+  set(CONTENT, {
+    '--x': 100 * POS_X,
+    '--y': 100 * POS_Y });
+
+  const xPercent = mapRange(
+  window.innerWidth * 0.25,
+  window.innerWidth * 0.75,
+  -LIMIT,
+  LIMIT,
+  x);
+
+  const yPercent = mapRange(
+  window.innerHeight * 0.25,
+  window.innerHeight * 0.75,
+  -LIMIT,
+  LIMIT,
+  y);
+
+  set(BUTTON, {
+    xPercent,
+    yPercent });
+
+};
+
+document.addEventListener('pointermove', UPDATE);
+document.addEventListener('pointerdown', UPDATE);
+</script>
+</html>
