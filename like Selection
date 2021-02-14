@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Montserrat, sans-serif;
+}
+@media screen and (max-width: 1200px) {
+  html,
+body {
+    font-size: 0.8em;
+  }
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.25em;
+}
+
+h1,
+header > h1 + * {
+  font-family: "Playfair Display", serif;
+  color: #59524f;
+}
+
+header > h1 + * {
+  font-size: 1.4em;
+  margin-top: 0;
+}
+
+.header {
+  position: fixed;
+  float: left;
+  width: 18em;
+  min-height: 100%;
+  color: #f0f0f2;
+  background-color: #59524f;
+}
+.header__menu ul {
+  padding-left: 2em;
+}
+.header__branding {
+  padding: 1.8em 1em 2em 1em;
+  font-size: 2.5em;
+  background-color: #8c7a70;
+  font-family: "Dancing Script", cursive;
+}
+.header__menuItem {
+  margin: 3em 0;
+  font-size: 1.2em;
+  perspective: 1000px;
+  perspective-origin: calc(1.25em * 0.5) 50%;
+}
+.header__menuItemIcon {
+  float: left;
+  width: 1.25em;
+  height: 1.25em;
+}
+.header__menuItemIcon svg {
+  width: 1.25em;
+  height: 1.25em;
+  fill: #f0f0f2;
+  stroke: #f0f0f2;
+}
+.header__menuItemLabel {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 1em;
+}
+
+.main {
+  float: right;
+  padding: 1.25em 2.5em;
+  width: calc(100% - 18em);
+  min-height: 100%;
+  background-color: #d9ccc1;
+}
+
+#cards {
+  max-width: 75em;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  height: 15em;
+  width: 15em;
+  background-color: #c5b3a3;
+  border-radius: 25px;
+  margin: 2em 2em 0 0;
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f2;
+  transition: opacity 500ms ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+.card_favorited {
+  transform-origin: 0.5em 0.5em;
+}
+.card_favorited::after {
+  z-index: 1;
+  opacity: 1;
+}
+.card_hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+}
+.card__image {
+  width: 15em;
+  height: 75%;
+  border-radius: 25px 25px 0 0;
+}
+.card__image > img {
+  position: relative;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+.card__image_loaded > img {
+  opacity: 1;
+}
+.card__choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25%;
+}
+.card__choice button {
+  font-size: 0.9em;
+  background-color: #59524f;
+  width: 3em;
+  height: 3em;
+  border: none;
+  border-radius: calc(3em / 2);
+  padding: 0.3em 0 0 0;
+  margin: 0 1em;
+  cursor: pointer;
+}
+.card__choice button svg {
+  width: 1.3em;
+  height: 1.3em;
+  fill: #d9ccc1;
+  stroke: #d9ccc1;
+}
+.card__choice button[data-action=dislike]:hover, .card__choice button[data-action=dislike]:focus {
+  background-color: #b71c1c;
+}
+.card__choice button[data-action=like]:hover, .card__choice button[data-action=like]:focus {
+  background-color: #8c7a70;
+}
+
+.overflowFixForSafari {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+</style>
+<body>
+  
+<header class="header">
+  <div class="header__branding">Your interior design builder</div>
+  <nav class="header__menu">
+    <ul>
+      <div class="header__menuItem"><i class="header__menuItemIcon"><svg viewBox="0 0 576 512" width="100" title="home"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" /></svg></i>
+        <li class="header__menuItemLabel">Home</li>
+      </div>
+      <div class="header__menuItem"><i class="header__menuItemIcon" id="favMenuItem"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></i>
+        <li class="header__menuItemLabel">Favorites</li>
+      </div>
+      <div class="header__menuItem"><i class="header__menuItemIcon"><svg viewBox="0 0 496 512" width="100" title="compass"><path d="M225.38 233.37c-12.5 12.5-12.5 32.76 0 45.25 12.49 12.5 32.76 12.5 45.25 0 12.5-12.5 12.5-32.76 0-45.25-12.5-12.49-32.76-12.49-45.25 0zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm126.14 148.05L308.17 300.4a31.938 31.938 0 0 1-15.77 15.77l-144.34 65.97c-16.65 7.61-33.81-9.55-26.2-26.2l65.98-144.35a31.938 31.938 0 0 1 15.77-15.77l144.34-65.97c16.65-7.6 33.8 9.55 26.19 26.2z" /></svg></i>
+        <li class="header__menuItemLabel">Explore</li>
+      </div>
+      <div class="header__menuItem"><i class="header__menuItemIcon"><svg viewBox="0 0 512 512" width="100" title="cog"><path d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" /></svg></i>
+        <li class="header__menuItemLabel">Settings</li>
+      </div>
+      <div class="header__menuItem"><i class="header__menuItemIcon"><svg viewBox="0 0 512 512" width="100" title="info-circle"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z" /></svg></i>
+        <li class="header__menuItemLabel">About</li>
+      </div>
+    </ul>
+  </nav>
+</header>
+<main class="main">
+  <header>
+    <h1>What's your kind of interior design?</h1>
+    <p>This will help us suit our suggestions to your taste</p>
+  </header>
+  <div id="cards">
+    <article class="card card_hidden" id="card-0">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-1">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-2">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-3">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-4">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-5">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-6">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+    <article class="card card_hidden" id="card-7">
+      <div class="card__image overflowFixForSafari"><img src="" alt="A nice furniture"/></div>
+      <div class="card__choice">
+        <button data-action="dislike"><svg viewBox="0 0 512 512" width="100" title="heart-broken"><path d="M473.7 73.8l-2.4-2.5c-46-47-118-51.7-169.6-14.8L336 159.9l-96 64 48 128-144-144 96-64-28.6-86.5C159.7 19.6 87 24 40.7 71.4l-2.4 2.4C-10.4 123.6-12.5 202.9 31 256l212.1 218.6c7.1 7.3 18.6 7.3 25.7 0L481 255.9c43.5-53 41.4-132.3-7.3-182.1z" /></svg></button>
+        <button data-action="like"><svg viewBox="0 0 512 512" width="100" title="heart"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg></button>
+      </div>
+    </article>
+  </div>
+</main>
+</body>
+<script>
+const unsplashIds = [
+  "FV3GConVSss",
+  "JaXs8Tk5Iww",
+  "UV81E0oXXWQ",
+  "MNz7IGrcEl0",
+  "tleCJiDOri0",
+  "JdcJn85xD2k",
+  "nhWgZNV85LQ",
+  "UXFJ-6Zj27M",
+  "98WE9hWWjiQ",
+  "3mlg5BRUifM",
+  "_B9J6abAHPA",
+  "VOS6akpHo1k",
+  "f7h2nTvEknM",
+  "RBoGC_OJvWs",
+  "GliaHAJ3_5A"
+];
+
+const cards = document.querySelectorAll(".card");
+const cardsContainer = document.querySelector("#cards");
+const favoriteIcon = document.getElementById("favMenuItem");
+
+function getCard(element) {
+  if (element.classList.contains("card")) {
+    return element;
+  } else if (element !== document.documentElement) {
+    return getCard(element.parentElement);
+  }
+}
+
+function getButton(element) {
+  if (element.tagName === "BUTTON") {
+    return element;
+  } else if (element !== document.documentElement)
+    return getButton(element.parentElement);
+}
+
+function getImg(card) {
+  if (!(card instanceof Element && card.classList.contains("card"))) return;
+  return card.querySelector("img");
+}
+
+function appear(card) {
+  const id = Math.floor(Math.random() * unsplashIds.length);
+  const cardImg = getImg(card);
+  const src = `https://source.unsplash.com/${unsplashIds[id]}/240x180`;
+  card.classList.remove("card_hidden");
+  cardImg.setAttribute("src", src);
+}
+
+function reset(card) {
+  const cardImg = getImg(card);
+  cardImg.setAttribute("src", "");
+  cardImg.parentElement.classList.remove("card__image_loaded");
+  card.classList.add("card_hidden");
+  card.classList.remove("card_favorited");
+  setTimeout(() => {
+    appear(card);
+  }, 400);
+}
+
+function like(card) {
+  const animationDuration = 1000;
+  const distance = getDistance(card, favoriteIcon);
+  card.classList.add("card_favorited");
+  favoriteIcon.animate([{ transform: "translateZ(700px)", offset: 0.5 }], {
+    duration: animationDuration,
+    easing: "ease-in-out"
+  });
+  const animation = card.animate(
+    [
+      {
+        transform: `translate(${distance.x}px, ${distance.y}px) scale(0.2) rotate(-40deg)`
+      }
+    ],
+    { duration: animationDuration / 2, easing: "ease-in" }
+  );
+
+  animation.onfinish = () => {
+    reset(card);
+  };
+}
+
+function dislike(card) {
+  const animation = card.animate(
+    [
+      {
+        transform: "scale(0.1) rotate(-130deg)",
+        opacity: 0
+      }
+    ],
+    { duration: 400, easing: "ease-in-out" }
+  );
+
+  animation.onfinish = () => {
+    reset(card);
+  };
+}
+
+function buttonHandler(event) {
+  const card = getCard(event.target);
+  const button = getButton(event.target);
+
+  if (!card || !button || !button.dataset) return;
+  if (button.dataset.action === "like") like(card);
+  if (button.dataset.action === "dislike") dislike(card);
+}
+
+function getDistance(elt1, elt2) {
+  if (!(elt1 instanceof Element && elt2 instanceof Element))
+    throw Error("Illegal use of the function");
+
+  const elt1Bbox = elt1.getBoundingClientRect();
+  const elt2Bbox = elt2.getBoundingClientRect();
+
+  return { x: elt2Bbox.x - elt1Bbox.x, y: elt2Bbox.y - elt1Bbox.y };
+}
+
+function init() {
+  cardsContainer.addEventListener("click", buttonHandler);
+
+  [...cards].forEach((card, index) => {
+    const cardImg = getImg(card);
+    cardImg.addEventListener("load", () => {
+      cardImg.parentElement.classList.add("card__image_loaded");
+    });
+
+    setTimeout(() => {
+      appear(card);
+    }, 200 + index * 50);
+  });
+}
+
+window.addEventListener("DOMContentLoaded", init);
+
+</script>
+</html>
