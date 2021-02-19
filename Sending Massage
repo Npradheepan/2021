@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap"rel="stylesheet"">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+:root {
+  --orange: rgb(255, 115, 72);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--orange);
+  overflow: hidden;
+}
+
+button {
+  position: relative;
+  border: none;
+  width: 180px;
+  height: 60px;
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.014), 0 6.7px 5.3px rgba(0, 0, 0, 0.02), 0 12.5px 10px rgba(0, 0, 0, 0.025), 0 22.3px 17.9px rgba(0, 0, 0, 0.03), 0 41.8px 33.4px rgba(0, 0, 0, 0.036), 0 100px 80px rgba(0, 0, 0, 0.05);
+}
+button .inner,
+button .send-text,
+button .sending-text {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+button .inner {
+  --size: 28px;
+  left: 18%;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--orange);
+  overflow: hidden;
+}
+button .inner .icon-container {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+}
+button .inner .icon-container .icon {
+  --icon-size: 14px;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+button .inner .icon-container .icon svg {
+  fill: white;
+  width: 100%;
+  height: 100%;
+}
+button .inner .icon-container .icon.check {
+  --icon-size: 28px;
+  transform: translate(-25%, -25%);
+}
+button .inner .icon-container .icon.check svg {
+  stroke: #fff;
+  stroke-width: 5px;
+}
+button .inner .icon-container .icon.check .checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+button .send-text,
+button .sending-text,
+button .delivered-text {
+  color: #000;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+  margin-left: 10px;
+}
+button .send-text {
+  left: 52%;
+}
+button .sending-text {
+  color: white;
+  opacity: 1;
+  width: 100%;
+  letter-spacing: 2px;
+}
+button .sending-text .char {
+  position: relative;
+}
+button .sending-text.__1 {
+  left: -25%;
+}
+button .sending-text.__2 {
+  left: -95%;
+}
+button .delivered-text {
+  opacity: 0;
+}
+button::-moz-focus-inner {
+  outline: none;
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.support a {
+  margin: 0 10px;
+  color: #333333;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}
+</style>
+<body>
+  <button>
+    <div class="inner">
+      <div class="icon-container">
+        <div class="icon send">
+          <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="m8.75 17.612v4.638c0 .324.208.611.516.713.077.025.156.037.234.037.234 0 .46-.11.604-.306l2.713-3.692z" />
+            <path d="m23.685.139c-.23-.163-.532-.185-.782-.054l-22.5 11.75c-.266.139-.423.423-.401.722.023.3.222.556.505.653l6.255 2.138 13.321-11.39-10.308 12.419 10.483 3.583c.078.026.16.04.242.04.136 0 .271-.037.39-.109.19-.116.319-.311.352-.53l2.75-18.5c.041-.28-.077-.558-.307-.722z" />
+          </svg>
+        </div>
+        <div class="icon check">
+          <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span class="send-text">Send Message</span>
+    <div class="delivered-text">Delivered</div>
+    <div class="text">
+      <div class="sending-text __1" data-splitting>Sending</div>
+      <div class="sending-text __2" data-splitting>Sending</div>
+    </div>
+  </button>
+  
+  <div class="support">
+    <a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
+    <a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
+  </div>
+</body>
+<script>
+console.clear();
+
+const { gsap } = window;
+
+Splitting();
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", send);
+
+function send() {
+	gsap.set(button, {
+		pointerEvents: "none"
+	});
+
+	let buttonTl = gsap.timeline({ ease: "Power4.in" });
+	buttonTl
+		.to(".icon.send", {
+			duration: 0.25,
+			opacity: 0,
+			translateX: "100%",
+			translateY: "-100%"
+		})
+		.to(button, {
+			duration: 0.35,
+			scale: 0.9
+		})
+		.to(".inner", {
+			duration: 0.4,
+			delay: -0.3,
+			width: "150%",
+			height: "150%",
+			left: "50%",
+			borderRadius: "0.5rem"
+		})
+		.to(".send-text", {
+			duration: 0.4,
+			delay: -0.4,
+			translateX: "150%"
+		})
+		.to("body", {
+			duration: 0.25,
+			delay: -0.1,
+			backgroundColor: "#fff"
+		})
+		.call(sending);
+}
+
+function sending() {
+	let c = 0;
+	let repeat = 2;
+
+	let sendingTl = gsap.timeline({ repeat });
+	sendingTl
+		.to(".sending-text .char", {
+			duration: 0.35,
+			stagger: -0.05,
+			left: "70%"
+		})
+		.to(".sending-text.__1 .char", {
+			delay: 0.3,
+			duration: 0.35,
+			stagger: -0.05,
+			left: "140%"
+		})
+		.to(".sending-text.__2 .char", {
+			delay: -0.3,
+			duration: 0.35,
+			stagger: -0.05,
+			left: "140%"
+		})
+		.to(".sending-text.__2 .char", {
+			delay: 0.3,
+			duration: 0.35,
+			stagger: -0.05,
+			left: "210%"
+		})
+		.call(() => {
+			if (c == repeat) delivered();
+			c++;
+		});
+}
+
+function delivered() {
+	let deliveredTl = gsap.timeline();
+	deliveredTl
+		.to(".inner", {
+			duration: 0.3,
+			width: "28px",
+			height: "28px",
+			left: "18%",
+			borderRadius: "50%"
+		})
+		.fromTo(
+			".delivered-text",
+			{
+				opacity: 0,
+				translateY: "15%"
+			},
+			{
+				duration: 0.3,
+				opacity: 1,
+				translateY: "0%"
+			}
+		)
+		.to(".checkmark__check", {
+			duration: 0.25,
+			strokeDashoffset: 0
+		})
+		.to("body", {
+			duration: 0.25,
+			delay: -0.55,
+			backgroundColor: "rgb(255, 115, 72)"
+		})
+		.call(() => {
+			setTimeout(() => {
+				reset();
+			}, 1000);
+		});
+}
+
+function reset() {
+	let resetTl = gsap.timeline();
+
+	resetTl
+		.to(".delivered-text", {
+			duration: 0.25,
+			opacity: 0,
+			translateY: "-10%"
+		})
+		.fromTo(
+			".send-text",
+			{
+				opacity: 0,
+				translateY: "10%",
+				left: "52%",
+				translateX: "0%"
+			},
+			{
+				delay: -0.1,
+				duration: 0.25,
+				opacity: 1,
+				translateY: "-50%"
+			}
+		)
+		.to(
+			".checkmark__check",
+			{
+				duration: 0.25,
+				strokeDashoffset: 48
+			},
+			"-=.25"
+		)
+		.fromTo(
+			".icon.send",
+			{
+				opacity: 0,
+				translateX: "-100%",
+				translateY: "100%"
+			},
+			{
+				duration: 0.25,
+				opacity: 1,
+				translateX: "0%",
+				translateY: "0%"
+			}
+		)
+		.to(button, {
+			duration: 0.5,
+			scale: 1,
+			ease: "bounce.out"
+		})
+		.set(".sending-text .char", {
+			left: "0"
+		})
+		.set(button, {
+			pointerEvents: "all"
+		});
+}
+
+</script>
+</html>
