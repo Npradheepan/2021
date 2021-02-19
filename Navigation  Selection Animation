@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet">
+  <title>Document</title>
+</head>
+<style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #141212;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: #5a5753;
+  margin: 0 1rem;
+  transition: text-shadow 300ms ease, color 300ms ease;
+}
+nav a .slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #4df9ff;
+  transform: scaleX(0);
+}
+nav a.active {
+  color: #4df9ff;
+  text-shadow: 0 0 20px #4df9ff7c;
+}
+nav a:focus {
+  outline: none;
+  border: none;
+}
+
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.support a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}
+</style>
+<body>
+  <nav>
+    <a href="#">
+      <span class="text">Animation</span>
+      <div class="slide"></div>
+    </a>
+    <a href="#">
+      <span class="text">Branding</span>
+      <div class="slide"></div>
+    </a>
+    <a href="#">
+      <span class="text">Illustration</span>
+      <div class="slide"></div>
+    </a>
+  </nav>
+  
+  <div class="support">
+    <a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
+    <a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
+  </div>
+</body>
+<script>
+console.clear();
+
+const { gsap } = window;
+
+let currentLink;
+let currentIndex = 0;
+const links = document.querySelectorAll("nav a");
+
+links.forEach((link, index) => {
+	link.addEventListener("click", (e) => {
+		addActive(e, index);
+	});
+});
+
+function addActive(e, i) {
+	const target = e.currentTarget;
+	if (target != currentLink) {
+		let direction;
+		if (currentIndex < i) direction = "right";
+		else direction = "left";
+		const slide = target.querySelector(".slide");
+
+		gsap
+			.timeline()
+			.call(() => {
+				links.forEach((link) => {
+					link.classList.remove("active");
+				});
+			})
+			.fromTo(
+				slide,
+				{
+					transformOrigin: `${direction == "left" ? "right" : "left"} center`,
+					scaleX: 0
+				},
+				{
+					delay: 0.1,
+					duration: 0.25,
+					scaleX: 1
+				}
+			)
+			.call(() => {
+				target.classList.add("active");
+			})
+			.to(slide, {
+				delay: 0.25,
+				duration: 0.25,
+				transformOrigin: `${direction} center`,
+				scaleX: 0
+			});
+		currentLink = target;
+		currentIndex = i;
+	}
+}
+
+</script>
+</html>
