@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background: #000;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
+<body>
+  <canvas id="playground" style=" width: 100vw; height: 100vh; top: 0; left: 0; position: fixed;"></canvas>
+</body>
+<script>
+  var canvas = document.getElementById("playground");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext("2d");
+  var baseR = getRandomInt(0, 255);
+  var baseG = getRandomInt(0, 255);
+  var baseB = getRandomInt(0, 255);
+
+  baseR = 0;
+  baseG = 108;
+  baseB = 255;
+
+  var colorShiftType = getRandomInt(1, 3);
+  for (var i = 0; i < 12; i++) {
+    if (getRandomInt(0, 4) == 3) {
+      drawDigitalRainRow(
+        i * 100 - 400,
+        ctx,
+        baseR,
+        baseG,
+        baseB,
+        colorShiftType,
+        getRandomInt(0, 10) / 10 - 0.5
+      );
+    } else {
+      var offset = i * 100 - 400;
+      drawDigitalRainRow(offset, ctx, baseR, baseG, baseB, colorShiftType, 0);
+    }
+  }
+
+  var img = canvas.toDataURL("image/png");
+  document.write('<img src="' + img + '"/>');
+
+  function drawDigitalRainRow(
+    y,
+    ctx,
+    baseR,
+    baseG,
+    baseB,
+    channelshift,
+    downangle
+  ) {
+    var frequency = getRandomInt(15, 200);
+
+    for (var i = 0; i < window.innerWidth; i++) {
+      var fadeLoop =
+        Math.floor(Math.sin(i / (window.innerWidth / Math.PI)) * (255 * 1.2)) -
+        255;
+      var colorLoop =
+        Math.floor(
+          Math.sin(i / (window.innerWidth / (Math.PI / 2))) * (255 * 2)
+        ) - 255;
+      var logLoop =
+        (Math.floor(Math.sin((i * 1) / (window.innerWidth / Math.PI)) * 50) -
+          50) *
+        -1;
+      //console.log((100-(logLoop*2))/100);
+      var offset =
+        Math.sin(i / frequency) * 50 + getRandomInt(0, 100) + downangle * i;
+      if (getRandomInt(0, 25) == 21) {
+        offset += 60;
+      }
+      var r = baseR;
+      var g = baseG;
+      var b = baseB;
+      if (fadeLoop > 0) {
+        //r += fadeLoop;
+        // g += fadeLoop;
+        // b += fadeLoop;
+      }
+
+      if (channelshift == 1) {
+        r += colorLoop;
+      }
+      if (channelshift == 2) {
+        g += colorLoop;
+      }
+      if (channelshift == 3) {
+        b += colorLoop;
+      }
+      if (r > 255) {
+        r = 255;
+      }
+      if (g > 255) {
+        g = 255;
+      }
+      if (b > 255) {
+        b = 255;
+      }
+      if (r < 0) {
+        r = 0;
+      }
+      if (g < 0) {
+        g = 0;
+      }
+      if (b < 0) {
+        b = 0;
+      }
+
+      var grad = ctx.createLinearGradient(0, 0, 0, y + 400 + offset);
+      var colorBlockOff = "rgba(" + r + ", " + g + ", " + b + ",0)";
+      //console.log((100-(logLoop*2))/100);
+      var colorBlockOn =
+        "rgba(" + r + ", " + g + ", " + b + "," + (100 - logLoop * 2) / 100 + ")";
+      grad.addColorStop(0, colorBlockOff);
+      grad.addColorStop(getRandomInt(80, 99) / 100, colorBlockOff);
+      if (getRandomInt(0, logLoop) < 5) {
+        grad.addColorStop(1, "rgba(195, 250, 255, 1)");
+      } else {
+        grad.addColorStop(1, colorBlockOff);
+      }
+
+      ctx.strokeStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(i, y + offset);
+
+      ctx.lineTo(i, y + 400 + offset);
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+</script>
+
+</html>
