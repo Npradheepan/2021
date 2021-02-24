@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #btn--yp {
+  box-sizing: content-box;
+  position: fixed;
+  z-index: 9;
+  bottom: 1em;
+  right: 1em;
+  border: solid 1em transparent;
+  width: 4.625em;
+  height: 3.25em;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/icon-yp.svg) 50%/cover content-box;
+  font: 16px/1.25 trebuchet ms, sans-serif;
+  text-indent: 200vw;
+  text-shadow: none;
+  filter: grayscale(1) drop-shadow(0 0 1px #e8e0e0);
+  transition: 0.5s;
+  white-space: nowrap;
+}
+#btn--yp:before {
+  box-sizing: inherit;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin: 1em -0.5em;
+  padding: 0.5em;
+  width: 100%;
+  border-radius: 5px;
+  background: #e8e0e0;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0vw;
+  white-space: normal;
+  animation: float 1s ease-in-out infinite alternate;
+  content: attr(data-txt);
+}
+#btn--yp:hover, #btn--yp:focus {
+  outline: none;
+  filter: grayscale(0) drop-shadow(0 0 1px crimson);
+}
+
+@keyframes float {
+  to {
+    transform: translateY(0.75em);
+  }
+}
+@property --hov {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+body {
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: repeat(var(--m), max-content);
+  place-content: center;
+  margin: 0;
+  padding: 0.5em;
+  min-height: 100vh;
+}
+
+.tile {
+  --list: rgba(102, 102, 102, 0) calc(var(--hov)*100%), #666666 0;
+  padding: min(6.5em, calc(.5*(100vw - (var(--m) + 1)*0.5em)/var(--m)));
+  background: var(--grd), var(--url) 50%/cover, var(--grd);
+  background-blend-mode: multiply, luminosity;
+  transition: --hov 0.5s;
+}
+.tile:hover {
+  --hov: 1 ;
+}
+
+[data-typ="0"] {
+  --grd: linear-gradient(var(--ang), var(--list)) ;
+}
+
+[data-typ="1"] {
+  --grd: radial-gradient(at var(--oxy), var(--list)) ;
+}
+</style>
+<body>
+    
+<body style="--m: 3"><a class="linky" target="_blank" href="https://codepen.io/thebabydino/pen/yLameyV">See the cross-browser version too!</a>
+    <div class="tile" data-typ="1" role="img" aria-label="Amur leopard" style="--oxy: 0 0; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_12.jpg)"></div>
+    <div class="tile" data-typ="0" role="img" aria-label="Amur leopard" style="--ang: 0deg; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_14.jpg)"></div>
+    <div class="tile" data-typ="1" role="img" aria-label="Amur leopard" style="--oxy: 100% 0; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_33.jpg)"></div>
+    <div class="tile" data-typ="0" role="img" aria-label="Amur leopard" style="--ang: -90deg; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_25.jpg)"></div>
+    <div class="tile" data-typ="1" role="img" aria-label="Amur leopard" style="--oxy: 50% 50%; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_16.jpg)"></div>
+    <div class="tile" data-typ="0" role="img" aria-label="Amur leopard" style="--ang: 90deg; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_18.jpg)"></div>
+    <div class="tile" data-typ="1" role="img" aria-label="Amur leopard" style="--oxy: 0 100%; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_13.jpg)"></div>
+    <div class="tile" data-typ="0" role="img" aria-label="Amur leopard" style="--ang: 180deg; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_24.jpg)"></div>
+    <div class="tile" data-typ="1" role="img" aria-label="Amur leopard" style="--oxy: 100% 100%; --url: url(https://assets.codepen.io/2017/17_05_a_amur_leopard_2.jpg)"></div>
+  </body>
+</body>
+</html>
