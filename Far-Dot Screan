@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+@-webkit-keyframes black {
+  0% {
+    width: 102%;
+    height: 1000px;
+    margin-top: -10px;
+    border-radius: 0%;
+  }
+  0% {
+    border-radius: 100%;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+  }
+  10% {
+    width: 300px;
+    height: 300px;
+    margin-top: 200px;
+  }
+  25% {
+    width: 102%;
+    height: 1000px;
+    margin-top: -10px;
+    border-radius: 0%;
+  }
+  100% {
+    width: 102%;
+    height: 1000px;
+    margin-top: -10px;
+    border-radius: 0%;
+  }
+}
+@-webkit-keyframes white {
+  0% {
+    width: 102%;
+    height: 1000px;
+    margin-top: -10px;
+    border-radius: 0%;
+  }
+  0% {
+    border-radius: 100%;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+  }
+  50% {
+    border-radius: 100%;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+  }
+  60% {
+    width: 300px;
+    height: 300px;
+    margin-top: 200px;
+  }
+  75% {
+    width: 102%;
+    height: 1000px;
+    margin-top: -10px;
+    border-radius: 0%;
+  }
+  100% {
+    width: 102%;
+    height: 1000px;
+    margin-top: -10px;
+    border-radius: 0%;
+  }
+}
+
+.animate {
+  right: 0px;
+  left: 0px;
+  -webkit-animation: black 6s infinite;
+  margin-top: 500px;
+  clear: left;
+  position: fixed;
+  padding: 0;
+  background-color: black;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.44);
+  margin: 0 auto;
+  width: 102%;
+  height: 1000px;
+  margin-top: -10px;
+  border-radius: 0%;
+}
+.animate2 {
+  right: 0px;
+  left: 0px;
+  -webkit-animation: white 6s infinite;
+  margin-top: 500px;
+  clear: left;
+  position: fixed;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.44);
+  margin: 0 auto;
+  width: 102%;
+  height: 1000px;
+  margin-top: -10px;
+  border-radius: 0%;
+}
+
+</style>
+<body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Animation</title>
+  </head>
+  
+  <body bgcolor=#FAFAFA>
+    <div class="animate">
+    </div>
+    <div class="animate2">
+    </div>
+  </body>
+</body>
+<script>
+
+</script>
+</html>
