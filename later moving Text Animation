@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+  --orange-1: #ff8d0a;
+  --orange-2: #e76a28;
+
+  --green-1: #97bf0d;
+  --green-2: #41a62a;
+
+  --crimson-1: #cb0094;
+  --crimson-2: #8d007a;
+
+  --size: 120px;
+
+  font-family: "Barlow", sans-serif;
+
+  background-image: linear-gradient(
+      33deg,
+      transparent 0%,
+      transparent 8%,
+      rgba(9, 9, 9, 0.02) 8%,
+      rgba(9, 9, 9, 0.02) 59%,
+      transparent 59%,
+      transparent 100%
+    ),
+    linear-gradient(
+      234deg,
+      transparent 0%,
+      transparent 32%,
+      rgba(225, 225, 225, 0.02) 32%,
+      rgba(225, 225, 225, 0.02) 99%,
+      transparent 99%,
+      transparent 100%
+    ),
+    linear-gradient(
+      312deg,
+      transparent 0%,
+      transparent 24%,
+      rgba(93, 93, 93, 0.02) 24%,
+      rgba(93, 93, 93, 0.02) 58%,
+      transparent 58%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+svg#masks {
+  border: 1px solid blue;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: -200px;
+}
+
+.container {
+  width: min-content;
+  height: min-content;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.letter-g,
+.letter-a,
+.letter-c {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(4, 30px);
+  grid-template-rows: repeat(4, 30px);
+}
+
+/* LETTER: G
+----------------------------- */
+
+.letter-g {
+  mask: url(#mask-1);
+}
+
+.letter-g > #triangle:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.letter-g > #triangle:nth-child(2) {
+  grid-column: 2/4;
+  grid-row: 1/3;
+  transform: rotateZ(180deg) translate(0.5px, -15%);
+}
+.letter-g > #triangle:nth-child(3) {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  transform: rotateZ(180deg);
+  position: relative;
+}
+.letter-g > #triangle:nth-child(4) {
+  grid-column: 2/4;
+  grid-row: 3/5;
+  transform: translateY(-15%);
+}
+.letter-g > #triangle:nth-child(5) {
+  grid-column: 3/5;
+  grid-row: 3/5;
+  transform: rotateZ(180deg) translateX(0.5px);
+}
+
+@keyframes first {
+  0% {
+    transform: skewX(-30deg) translate(6px, 10px) scaleY(1%);
+  }
+  100% {
+    transform: skewX(-30deg) translate(6px, 10px) scaleY(100%);
+  }
+}
+
+/* LETTER: A
+----------------------------- */
+
+.letter-a {
+  mask: url(#mask-2);
+}
+
+.letter-a > #triangle:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  transform: translateX(1px);
+}
+.letter-a > #triangle:nth-child(2) {
+  grid-column: 2/4;
+  grid-row: 1/3;
+  transform: rotateZ(180deg) translateY(-15%);
+}
+.letter-a > #triangle:nth-child(3) {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  transform: rotateZ(180deg);
+}
+.letter-a > #triangle:nth-child(4) {
+  grid-column: 3/5;
+  grid-row: 1/3;
+  transform: translateX(-1px);
+}
+.letter-a > #triangle:nth-child(5) {
+  grid-column: 3/5;
+  grid-row: 3/5;
+  transform: rotateZ(180deg);
+}
+
+/* LETTER: C
+----------------------------- */
+
+.letter-c {
+  mask: url(#mask-3);
+}
+
+.letter-c > #triangle:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.letter-c > #triangle:nth-child(2) {
+  grid-column: 2/4;
+  grid-row: 1/3;
+  transform: rotateZ(180deg) translate(0.5px, -15%);
+}
+.letter-c > #triangle:nth-child(3) {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  transform: rotateZ(180deg);
+}
+.letter-c > #triangle:nth-child(4) {
+  grid-column: 2/4;
+  grid-row: 3/5;
+  transform: translateY(-15%);
+}
+
+.company {
+  padding: 10px;
+  align-self: center;
+}
+.company p {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.company p:nth-child(1) {
+  color: var(--green-1);
+}
+.company p:nth-child(2) {
+  color: var(--orange-1);
+}
+.company p:nth-child(3) {
+  color: var(--crimson-1);
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+button > svg {
+  stroke: var(--green-1);
+}
+
+footer {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgb(73, 73, 73);
+}
+footer a {
+  text-decoration: none;
+  color: var(--green-1);
+}
+footer a:hover {
+  border-bottom: 1px dotted var(--green-1);
+}
+
+/* Letter Bar <letter-bar>
+-------------------------------------------------- */
+
+#triangle {
+  width: 60px;
+  height: 60px;
+}
+
+</style>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" id="masks">
+    <mask id="mask-1">
+      <polygon id="m1" points="0 0, 57 0, 57 0, 0 0" fill="white" />
+      <polygon id="m2" points="0 60, 0 60, 0 120, 0 120" fill="white" />
+    </mask>
+    <mask id="mask-2">
+      <polygon id="m3" points="0 0, 57 0, 57 0, 0 0" fill="white" />
+      <polygon id="m4" points="0 0, 57 0, 57 0, 0 0" fill="white" />
+    </mask>
+    <mask id="mask-3">
+      <polygon id="m5" points="0 0, 57 0, 57 0, 0 0" fill="white" />
+      <polygon id="m6" points="0 0, 57 0, 57 0, 0 0" fill="white" />
+    </mask>
+  </svg>
+  <div class="container" id="app">
+    <div class="letter-g">
+      <letter-bar :col="green_1"></letter-bar>
+      <letter-bar :col="green_1"></letter-bar>
+      <letter-bar :col="green_1"></letter-bar>
+      <letter-bar :col="green_2"></letter-bar>
+      <letter-bar :col="green_2"></letter-bar>
+    </div>
+    <div class="letter-a">
+      <letter-bar :col="orange_1"></letter-bar>
+      <letter-bar :col="orange_1"></letter-bar>
+      <letter-bar :col="orange_1"></letter-bar>
+      <letter-bar :col="orange_2"></letter-bar>
+      <letter-bar :col="orange_2"></letter-bar>
+    </div>
+    <div class="letter-c">
+      <letter-bar :col="crimson_1"></letter-bar>
+      <letter-bar :col="crimson_1"></letter-bar>
+      <letter-bar :col="crimson_1"></letter-bar>
+      <letter-bar :col="crimson_2"></letter-bar>
+    </div>
+    <div class="company">
+      <p id="gru">Gruppo</p>
+      <p id="ani">Animazione</p>
+      <p id="cre">Creativa</p>
+    </div>
+    <button id="reset" @click="replay">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw">
+        <path d="M23 4v6h-6M1 20v-6h6" />
+        <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+      </svg>
+    </button>
+    <footer id="credits">
+      Based off this <a href="https://www.behance.net/gallery/10601909/GAC-logotipo" target="blank">branding</a>
+      by <a href="https://www.behance.net/paloma-canonica" target="blank">Paloma Canonica</a>
+    </footer>
+  </div>
+  
+  <template id="letter-bar">
+    <svg id="triangle" viewBox="0 0 100 100">
+      <polygon points="50 15, 100 100, 0 100" :fill="col" />
+    </svg>
+  </template>
+</body>
+<script>
+    const LetterBar = Vue.component("letter-bar", {
+  template: "#letter-bar",
+  props: ["col"]
+});
+
+new Vue({
+  el: "#app",
+
+  data() {
+    return {
+      green_1: "#97BF0D",
+      green_2: "#41A62A",
+      orange_1: "#FF8D0A",
+      orange_2: "#E76A28",
+      crimson_1: "#CB0094",
+      crimson_2: "#8D007A",
+      tl: null
+    };
+  },
+
+  components: { LetterBar },
+
+  methods: {
+    replay: function () {
+      this.tl.restart();
+    }
+  },
+
+  mounted() {
+    this.tl = gsap.timeline({ ease: "pow4.out" });
+
+    this.tl
+      .set("#m1", { rotation: 30, x: 40, y: -20 })
+      .set("#m3", { rotation: 30, x: 40, y: -20 })
+      .set("#m4", { rotation: -30, x: 30, y: 20 })
+      .set("#m5", { rotation: 30, x: 40, y: -20 })
+      .set("#m6", { rotation: -30, x: -10, y: 40 });
+
+    this.tl
+      .to("#m1", 0.7, { attr: { points: "0 0, 57 0, 57 140, 0 140" } })
+      .to(
+        "#m2",
+        0.7,
+        { attr: { points: "0 60, 120 60, 120 120, 0 120" } },
+        "-=0.4"
+      )
+      .to("#m3", 0.7, { attr: { points: "0 0, 57 0, 57 140, 0 140" } })
+      .to("#m4", 0.7, { attr: { points: "0 0, 57 0, 57 140, 0 140" } }, "-=0.4")
+      .to("#m5", 0.7, { attr: { points: "0 0, 57 0, 57 140, 0 140" } }, "-=0.2")
+      .to("#m6", 0.7, { attr: { points: "0 0, 57 0, 57 140, 0 140" } }, "-=0.4")
+      .from("#gru", 0.7, { opacity: 0, x: -20 }, "-=0.4")
+      .from("#ani", 0.7, { opacity: 0, x: -20 }, "-=0.4")
+      .from("#cre", 0.7, { opacity: 0, x: -20 }, "-=0.4")
+      .from("#reset", 0.7, { opacity: 0, y: 20 })
+      .from("#credits", 0.7, { opacity: 0, y: 20 });
+  }
+});
+
+</script>
+</html>
