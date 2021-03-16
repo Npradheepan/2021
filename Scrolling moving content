@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+:root {
+  --white: #fcfcfc;
+  --black: #252525;
+
+  --purple: #cf07fb;
+  --purple-gradient: linear-gradient(to top, #9733ee, #cf07fb);
+
+  /*--green: #49e691; */
+  --green: #36e77e;
+  --green-gradient: linear-gradient(to top, #061700, #49e691);
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.box {
+  background: var(--green);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.3);
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 36px;
+}
+
+</style>
+<body>
+  <h1>Scroll down to see more content</h1>
+<!-- a bunch of <div>'s to scroll through -->
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+<div class="box">
+  <h2>Content</h2>
+</div>
+</body>
+<script>
+const boxes = document.querySelectorAll(".box");
+
+window.addEventListener("scroll", checkBoxes);
+
+checkBoxes(); // shows initial box(es)
+
+function checkBoxes() {
+  const triggerBottom = (window.innerHeight / 5) * 4;
+
+  boxes.forEach((box) => {
+    const boxTop = box.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      box.classList.add("show");
+    } else {
+      box.classList.remove("show");
+    }
+  });
+}
+
+</script>
+</html>
