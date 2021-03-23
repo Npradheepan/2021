@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #real {
+	display:block;
+	margin-bottom: 8px;
+}
+#refl {
+	display:block;
+	-moz-transform: scaleY(-1);
+       -o-transform: scaleY(-1);
+       -webkit-transform: scaleY(-1);
+       transform: scaleY(-1);
+	-webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.1)));
+}
+</style>
+<body>
+    <img id="real" src="images/pic1.png" alt="">
+    <img id="refl" src="images/pic1.png" alt="">
+</body>
+</html>
