@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/Powerful-Responsive-Slider-Plugin-For-jQuery-AnythingSlider/js/jquery.anythingslider.js"></script><title>Document</title>
+</head>
+<style>
+    body {
+  background-color: #777;
+}
+#nav {
+  display: none;
+}
+.embed-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
+	AnythingSlider v1.8+ Default theme
+	By Chris Coyier: https://css-tricks.com
+	with major improvements by Doug Neiner: http://pixelgraphics.us/
+	based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/*****************************
+  SET DEFAULT DIMENSIONS HERE
+ *****************************/
+/* change the ID & dimensions to match your slider */
+#anythingWrap {
+  width: 100%;
+  height: 540px;
+  list-style: none;
+  /* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/******************
+  SET STYLING HERE
+ ******************
+ =================================
+ Default state (no keyboard focus)
+ ==================================*/
+/* Overall Wrapper */
+.anythingSlider-default {
+  margin: 0 auto;
+  /* 45px right & left padding for the arrows, 28px @ bottom for navigation */
+  padding: 0 45px 28px 45px;
+}
+/* slider window - top & bottom borders, default state */
+.anythingSlider-default .anythingWindow {
+}
+/* Navigation buttons + start/stop button, default state */
+.anythingSlider-default .anythingControls a {
+  /* top shadow */
+  background: #777 url(../images/default.png) center -288px repeat-x;
+  color: #000;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+}
+/* Make sure navigation text is visible */
+.anythingSlider-default .anythingControls a span {
+  visibility: visible;
+}
+/* Navigation current button, default state */
+.anythingSlider-default .anythingControls a.cur {
+  background: #888;
+  color: #000;
+}
+
+/* start-stop button, stopped, default state */
+.anythingSlider-default .anythingControls a.start-stop {
+  background-color: #040;
+  color: #ddd;
+}
+/* start-stop button, playing, default state */
+.anythingSlider-default .anythingControls a.start-stop.playing {
+  background-color: #800;
+}
+
+/* start-stop button, default hovered text color (when visible) */
+/* hide nav/start-stop background image shadow on hover - makes the button appear to come forward */
+.anythingSlider-default .anythingControls a.start-stop:hover,
+.anythingSlider-default .anythingControls a.start-stop.hover,
+.anythingSlider-default
+  .anythingControls
+  a.start-stop
+  .anythingControls
+  ul
+  a:hover {
+  background-image: none;
+  color: #ddd;
+}
+
+/*
+ =================================
+ Active State (has keyboard focus)
+ =================================
+*/
+/* slider window - top & bottom borders, active state */
+.anythingSlider-default.activeSlider .anythingWindow {
+}
+/* Navigation buttons, active state */
+.anythingSlider-default.activeSlider .anythingControls a {
+  /* background image = top shadow */
+}
+/* Navigation current & hovered button, active state */
+.anythingSlider-default.activeSlider .anythingControls a.cur,
+.anythingSlider-default.activeSlider .anythingControls a:hover {
+  /* background image removed */
+}
+
+/* start-stop button, stopped, active state */
+.anythingSlider-default.activeSlider .anythingControls a.start-stop {
+  background-color: #080;
+  color: #fff;
+}
+/* start-stop button, playing, active state */
+.anythingSlider-default.activeSlider .anythingControls a.start-stop.playing {
+  background-color: #d00;
+  color: #fff;
+}
+/* start-stop button, active slider hovered text color (when visible) */
+.anythingSlider-default.activeSlider .start-stop:hover,
+.anythingSlider-default.activeSlider .start-stop.hover {
+  color: #fff;
+}
+
+/************************
+  NAVIGATION POSITIONING
+ ************************/
+/* Navigation Arrows */
+.anythingSlider-default .arrow {
+  top: 50%;
+  position: absolute;
+  display: block;
+}
+
+.anythingSlider-default .arrow a {
+  display: block;
+  width: 45px;
+  height: 140px;
+  margin: -70px 0 0 0; /* half height of image */
+  text-align: center;
+  outline: 0;
+  background: url("https://www.jqueryscript.net/demo/Powerful-Responsive-Slider-Plugin-For-jQuery-AnythingSlider/images/default.png")
+    no-repeat;
+}
+
+/* back arrow */
+.anythingSlider-default .back {
+  left: 0;
+}
+.anythingSlider-default .back a {
+  background-position: left top;
+}
+.anythingSlider-default .back a:hover,
+.anythingSlider-default .back a.hover {
+  background-position: left -140px;
+}
+/* forward arrow */
+.anythingSlider-default .forward {
+  right: 0;
+}
+.anythingSlider-default .forward a {
+  background-position: right top;
+}
+.anythingSlider-default .forward a:hover,
+.anythingSlider-default .forward a.hover {
+  background-position: right -140px;
+}
+
+/* Navigation Links */
+.anythingSlider-default .anythingControls {
+  outline: 0;
+  display: none;
+}
+.anythingSlider-default .anythingControls ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.anythingSlider-default .anythingControls ul li {
+  display: inline;
+}
+.anythingSlider-default .anythingControls ul a {
+  font: 11px/18px Georgia, Serif;
+  display: inline-block;
+  text-decoration: none;
+  padding: 2px 8px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  text-align: center;
+  outline: 0;
+}
+
+/* navigationSize window */
+.anythingSlider-default .anythingControls .anythingNavWindow {
+  overflow: hidden;
+  float: left;
+}
+
+/* Autoplay Start/Stop button */
+.anythingSlider-default .anythingControls .start-stop {
+  padding: 2px 5px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+  z-index: 100;
+  outline: 0;
+}
+
+/***********************
+  IE8 AND OLDER STYLING
+ ***********************/
+
+/* Navigation Arrows */
+.as-oldie .anythingSlider-default .arrow {
+  top: 30%;
+}
+.as-oldie .anythingSlider-default .arrow a {
+  margin: 0;
+}
+
+/* margin between nav buttons just looks better */
+.as-oldie .anythingSlider-default .anythingControls li {
+  margin-left: 3px;
+}
+
+/* When using the navigationSize option, the side margins need to be zero
+	None of the navigation panels look good in IE7 now =( */
+.as-oldie .anythingSlider-default .anythingControls a {
+  margin: 0;
+}
+.as-oldie .anythingSlider-default .anythingNavWindow {
+  margin: 0 2px;
+}
+.as-oldie .anythingSlider-default .anythingNavWindow li {
+  padding: 3px 0 0 0;
+}
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* Overall Wrapper */
+.anythingSlider {
+  display: block;
+  overflow: visible !important;
+  position: relative;
+}
+/* anythingSlider viewport window */
+.anythingSlider .anythingWindow {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* anythingSlider base (original element) */
+.anythingSlider .anythingBase {
+  background: transparent;
+  list-style: none;
+  position: absolute;
+  overflow: visible !important;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation arrow text; indent moved to span inside "a", for IE7;
+  apparently, a negative text-indent on an "a" link moves the link as well as the text */
+.anythingSlider .arrow span {
+  display: block;
+  visibility: hidden;
+}
+/* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+.anythingSlider .arrow.disabled {
+  display: none;
+}
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
+  background: transparent;
+  display: block;
+  overflow: hidden;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+/* vertical mode */
+.anythingSlider .vertical .panel {
+  float: none;
+}
+/* fade mode */
+.anythingSlider .fade .panel {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+  z-index: 1;
+}
+
+</style>
+<body>
+    <!-- Expanding AnythingSlider 100% width -->
+<div id="nav"></div>
+<div id="anythingWrap">
+  <ul id="slider">
+    <li>
+      <div class='embed-container'><iframe src='https://player.vimeo.com/video/85037704' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    </li>
+    <li>
+      <div class='embed-container'><iframe src='https://player.vimeo.com/video/12155835' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    </li>
+    <li>
+      <img src="http://res.cloudinary.com/jackywinter/image/upload/c_scale,q_100,h_500,fl_awebp/by9pvjrtzhsdvhdv0nw1.webp" />
+    </li>
+    <li>
+      <div class='embed-container'><iframe src='https://player.vimeo.com/video/84391929' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+    </li>
+  </ul>
+</div>
+
+<!-- END AnythingSlider -->
+</body>
+<script>
+    $("#slider").anythingSlider({
+  expand: true,
+  autoPlay: false,
+  buildArrows: true,
+  buildStartStop: false,
+  buildNavigation: false,
+  /*appendControlsTo: $('#nav'),*/
+  appendForwardTo: null,
+  appendBackTo: null
+});
+
+$("#slider1").anythingSlider({
+  // Appearance
+  theme: "default", // Theme name
+  mode: "horiz", // Set mode to "horizontal", "vertical" or "fade" (only first letter needed); replaces vertical option
+  expand: false, // If true, the entire slider will expand to fit the parent element
+  resizeContents: true, // If true, solitary images/objects in the panel will expand to fit the viewport
+  showMultiple: false, // Set this value to a number and it will show that many slides at once
+  easing: "swing", // Anything other than "linear" or "swing" requires the easing plugin or
+
+  buildArrows: true, // If true, builds the forwards and backwards buttons
+  buildNavigation: true, // If true, builds a list of anchor links to link to each panel
+  buildStartStop: true, // If true, builds the start/stop button
+
+  appendForwardTo: null, // Append forward arrow to a HTML element (jQuery Object, selector or HTMLNode), if not null
+  appendBackTo: null, // Append back arrow to a HTML element (jQuery Object, selector or HTMLNode), if not null
+  appendControlsTo: null, // Append controls (navigation + start-stop) to a HTML element (jQuery Object, selector or HTMLNode), if not null
+  appendNavigationTo: null, // Append navigation buttons to a HTML element (jQuery Object, selector or HTMLNode), if not null
+  appendStartStopTo: null, // Append start-stop button to a HTML element (jQuery Object, selector or HTMLNode), if not null
+
+  toggleArrows: false, // If true, side navigation arrows will slide out on hovering & hide @ other times
+  toggleControls: false, // if true, slide in controls (navigation + play/stop button) on hover and slide change, hide @ other times
+
+  startText: "Start", // Start button text
+  stopText: "Stop", // Stop button text
+  forwardText: "&raquo;", // Link text used to move the slider forward (hidden by CSS, replaced with arrow image)
+  backText: "&laquo;", // Link text used to move the slider back (hidden by CSS, replace with arrow image)
+  tooltipClass: "tooltip", // Class added to navigation & start/stop button (text copied to title if it is hidden by a negative text indent)
+
+  // Function
+  enableArrows: true, // if false, arrows will be visible, but not clickable.
+  enableNavigation: true, // if false, navigation links will still be visible, but not clickable.
+  enableStartStop: true, // if false, the play/stop button will still be visible, but not clickable. Previously "enablePlay"
+  enableKeyboard: true, // if false, keyboard arrow keys will not work for this slider.
+
+  // Navigation
+  startPanel: 1, // This sets the initial panel
+  changeBy: 1, // Amount to go forward or back when changing panels.
+  hashTags: true, // Should links change the hashtag in the URL?
+  infiniteSlides: true, // if false, the slider will not wrap & not clone any panels
+  navigationFormatter: null, // Details at the top of the file on this use (advanced use)
+  navigationSize: false, // Set this to the maximum number of visible navigation tabs; false to disable
+
+  // Slideshow options
+  autoPlay: false, // If true, the slideshow will start running; replaces "startStopped" option
+  autoPlayLocked: false, // If true, user changing slides will not stop the slideshow
+  autoPlayDelayed: false, // If true, starting a slideshow will delay advancing slides; if false, the slider will immediately advance to the next slide when slideshow starts
+  pauseOnHover: true, // If true & the slideshow is active, the slideshow will pause on hover
+  stopAtEnd: false, // If true & the slideshow is active, the slideshow will stop on the last page. This also stops the rewind effect when infiniteSlides is false.
+  playRtl: false, // If true, the slideshow will move right-to-left
+
+  // Times
+  delay: 3000, // How long between slideshow transitions in AutoPlay mode (in milliseconds)
+  resumeDelay: 15000, // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds).
+  animationTime: 600, // How long the slideshow transition takes (in milliseconds)
+  delayBeforeAnimate: 0, // How long to pause slide animation before going to the desired slide (used if you want your "out" FX to show).
+
+  // Callbacks
+  onBeforeInitialize: function (e, slider) {}, // Callback before the plugin initializes
+  onInitialized: function (e, slider) {}, // Callback when the plugin finished initializing
+  onShowStart: function (e, slider) {}, // Callback on slideshow start
+  onShowStop: function (e, slider) {}, // Callback after slideshow stops
+  onShowPause: function (e, slider) {}, // Callback when slideshow pauses
+  onShowUnpause: function (e, slider) {}, // Callback when slideshow unpauses - may not trigger properly if user clicks on any controls
+  onSlideInit: function (e, slider) {}, // Callback when slide initiates, before control animation
+  onSlideBegin: function (e, slider) {}, // Callback before slide animates
+  onSlideComplete: function (slider) {}, // Callback when slide completes; this is the only callback without an event "e" parameter
+
+  // Interactivity
+  clickForwardArrow: "click", // Event used to activate forward arrow functionality (e.g. add jQuery mobile's "swiperight")
+  clickBackArrow: "click", // Event used to activate back arrow functionality (e.g. add jQuery mobile's "swipeleft")
+  clickControls: "click focusin", // Events used to activate navigation control functionality
+  clickSlideshow: "click", // Event used to activate slideshow play/stop button
+  allowRapidChange: false, // If true, allow rapid changing of the active pane, instead of ignoring activity during animation
+
+  // Video
+  resumeOnVideoEnd: true, // If true & the slideshow is active & a supported video is playing, it will pause the autoplay until the video is complete
+  resumeOnVisible: true, // If true the video will resume playing (if previously paused, except for YouTube iframe - known issue); if false, the video remains paused.
+  addWmodeToObject: "opaque", // If your slider has an embedded object, the script will automatically add a wmode parameter with this setting
+  isVideoPlaying: function (base) {
+    return false;
+  } // return true if video is playing or false if not - used by video extension
+});
+
+</script>
+</html>
