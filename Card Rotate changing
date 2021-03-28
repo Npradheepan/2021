@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Biryani:900|Bungee+Inline|Share+Tech+Mono");
+html {
+  --hang-time: 0;
+  --spin-time: 0;
+  --drift-amount: 25;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  perspective: 1000px;
+  position: relative;
+  background: linear-gradient(135deg, #cedce7 0%, #596a72 100%);
+}
+
+li {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-duration: calc(var(--spin-time) * 1s);
+  transition-property: transform;
+  perspective: 1000;
+}
+li[data-state=in] {
+  transition-duration: 0s;
+  transform: rotatey(90deg);
+}
+li[data-state=in] .card {
+  transform: rotatey(calc(var(--drift-amount) * 1deg));
+}
+li[data-state=show] {
+  transform: rotatey(0deg);
+  transition-timing-function: ease-out;
+  transition-delay: calc(var(--spin-time) * 1s);
+}
+li[data-state=show] .card {
+  -webkit-animation: drift calc(var(--hang-time) * 1s) linear;
+          animation: drift calc(var(--hang-time) * 1s) linear;
+}
+li[data-state=out] {
+  transform: rotatey(-90deg);
+  transition-timing-function: ease-in;
+}
+li[data-state=out] .card {
+  transform: rotatey(calc(var(--drift-amount) * -1deg));
+}
+
+.card {
+  transform-style: preserve-3d;
+}
+.card.credit {
+  width: 350px;
+  height: 200px;
+  background-color: #1e5799;
+  background: linear-gradient(135deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+  border-radius: 10px;
+  padding: 30px;
+}
+.card.credit h1 {
+  font-family: "Biryani", sans-serif;
+  color: #EEE;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.card.credit .chip {
+  display: block;
+  background-color: #EEE;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  border-right-color: white;
+  border-bottom-color: white;
+}
+.card.credit .embossed {
+  font-family: "Share Tech Mono", monospace;
+  color: #EEE;
+  width: 100%;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.card.credit .number {
+  text-align: center;
+  font-size: 26px;
+}
+.card.credit .date {
+  text-align: right;
+  font-size: 18px;
+}
+.card.credit .name {
+  font-size: 22px;
+}
+.card.birthday {
+  width: 300px;
+  height: 400px;
+  perspective: 1000;
+  transform-style: preserve-3d;
+}
+.card.birthday .front, .card.birthday .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  content: "";
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  transform: rotatey(10deg);
+}
+.card.birthday .front {
+  width: 90%;
+  background-color: #eee;
+  transform: rotatey(-10deg);
+  background-image: url(https://images.unsplash.com/photo-1479750178258-aec5879046ce?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=ae5399e4fa1724aefc6adfb9004d8a74);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.card.birthday .front h1 {
+  font-family: "Bungee Inline", cursive;
+  font-size: 43px;
+  text-align: center;
+  color: steelblue;
+  margin-bottom: 60px;
+  transform: rotate(-20deg);
+  text-shadow: 5px 5px 2px rgba(255, 255, 255, 0.8);
+}
+.card.playing {
+  width: 200px;
+  height: 320px;
+}
+.card.playing .face {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  background: linear-gradient(135deg, white 0%, #ededed 100%);
+  border-radius: 10px;
+  padding: 30px;
+  transform-origin: center center;
+  transform: rotatez(20deg) translate(-15%, -6%);
+}
+.card.playing .face .suit {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card.playing .face .suit .ace {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: "Share Tech Mono", monospace;
+}
+.card.playing .face .suit .diamond {
+  width: 75px;
+  height: 100px;
+  background-color: red;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.card.playing .face .suit.big {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card.playing .face .suit.small .diamond {
+  width: 25px;
+  height: 40px;
+}
+.card.playing .face .suit.bottom {
+  right: 20px;
+  bottom: 20px;
+  transform: rotate(180deg);
+}
+
+@-webkit-keyframes drift {
+  from {
+    transform: rotatey(calc(var(--drift-amount) * 1deg));
+  }
+  to {
+    transform: rotatey(calc(var(--drift-amount) * -1deg));
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: rotatey(calc(var(--drift-amount) * 1deg));
+  }
+  to {
+    transform: rotatey(calc(var(--drift-amount) * -1deg));
+  }
+}
+</style>
+<body>
+    <ul id="app">
+        <li id="credit-card" data-state="out">
+            <div class="card credit">
+                <h1>Money Bank</h1>
+                <div class="chip"></div>
+                <div class="embossed number">1234 5678 9101 1121</div>
+                <div class="embossed date">10/21</div>
+                <div class="embossed name">Real Person</div>
+            </div>
+        </li>
+        <li id="birthday-card" data-state="in">
+            <div class="card birthday">
+                <div class="front">
+                    <h1>HAPPY BIRTHDAY</h1>
+                </div>
+                <div class="back"></div>
+    
+            </div>
+        </li>
+        <li id="playing-card" data-state="show">
+            <div class="card playing">
+                <div class="face">
+                    <div class="suit small top">
+                        <div class="ace">A</div>
+                        <div class="diamond"></div>
+                    </div>
+                    <div class="suit big">
+                        <div class="diamond"></div>
+                    </div>
+                    <div class="suit small bottom">
+                        <div class="ace">A</div>
+                        <div class="diamond"></div>
+                    </div>
+                </div>
+    
+            </div>
+        </li>
+    </ul>
+</body>
+<script>
+    "use strict";
+console.clear();
+const hangTime = 2000;
+const spinTime = 300;
+document.documentElement.style.setProperty('--hang-time', hangTime / 1000);
+document.documentElement.style.setProperty('--spin-time', spinTime / 2000);
+let cards = ['credit-card', 'birthday-card', 'playing-card']; // 'library-card', 'loyality-card', 
+let selected = -1;
+let getCard = (position) => {
+    if (position < 0)
+        position = cards.length - 1;
+    if (position >= cards.length)
+        position = 0;
+    return document.querySelector('#' + cards[position]);
+};
+let nextCard = () => {
+    selected++;
+    if (selected >= cards.length)
+        selected = 0;
+    getCard(selected - 1).setAttribute('data-state', 'out');
+    getCard(selected).setAttribute('data-state', 'show');
+    getCard(selected + 1).setAttribute('data-state', 'in');
+};
+setInterval(() => nextCard(), hangTime);
+nextCard();
+
+</script>
+</html>
