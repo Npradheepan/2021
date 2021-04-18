@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://soulwire.github.io/sketch.js/js/sketch.min.js"></script><title>Document</title>
+</head>
+<style>
+    html, body {
+  overflow: hidden;
+}
+
+body {
+  background-color: #000;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/277/stars.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+svg {
+  position: absolute;
+  z-index: 2;
+  width: 450px;
+  height: 60px;
+  left: 50%;
+  top: 50%;
+  margin-left: -225px;
+  margin-top: -50px;
+}
+
+</style>
+<body>
+  <!-- 
+  The particles swimming around in the background of the Aquatilis website: http://aquatilis.tv
+ 
+  Original particle effect forked from Justin Windle's Gravity field experiment: https://codepen.io/soulwire/pen/begkI/
+
+-->
+
+<a href="http://aquatilis.tv" target="_blank"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="215.313px" height="29.479px" viewBox="0 0 215.313 29.479" enable-background="new 0 0 215.313 29.479" xml:space="preserve">
+  <g>
+    <path fill="#FFFFFF" d="M210.64,8.103l-1.479-0.608c-2.077-0.849-2.953-1.503-2.953-2.955c0-1.409,1.123-2.355,2.953-2.355
+        c1.751,0,2.735,0.777,3.448,1.796l1.585-0.874c-0.985-1.452-2.545-2.472-5.033-2.472c-2.792,0-4.894,1.577-4.894,3.952
+        c0,2.303,1.45,3.442,4.1,4.509l1.477,0.607c2.328,0.92,3.503,1.771,3.503,3.442c0,1.745-1.697,2.812-3.857,2.812
+        c-2.626,0-3.911-1.188-4.786-2.571l-1.641,0.777c0.987,1.747,2.926,3.347,6.483,3.347c3.334,0,5.769-1.65,5.769-4.364
+        C215.313,10.671,213.729,9.312,210.64,8.103z"></path>
+    <path fill="#FFFFFF" d="M72.708,10.115c0,3.854-0.972,5.845-4.705,5.845c-3.729,0-4.701-2.172-4.701-5.845V0.893h-2.033v9.768
+        c0,4.747,1.91,7.211,6.734,7.211c4.828,0,6.741-2.356,6.741-7.211V0.893h-2.036V10.115z"></path>
+    <polygon fill="#FFFFFF" points="115.098,2.776 120.421,2.776 120.421,17.249 122.454,17.249 122.454,2.776 127.776,2.776 
+        127.776,0.893 115.098,0.893 	"></polygon>
+    <rect x="142.395" y="0.802" fill="#FFFFFF" width="2.059" height="16.508"></rect>
+    <polygon fill="#FFFFFF" points="163.543,0.893 161.512,0.893 161.512,17.249 172.656,17.249 172.656,15.369 163.543,15.369 	"></polygon>
+    <rect x="187.288" y="0.802" fill="#FFFFFF" width="2.062" height="16.508"></rect>
+    <path fill="#FFFFFF" d="M37.929,0c-4.874,0-8.449,3.605-8.449,8.574c0,4.771,3.304,8.25,7.885,8.516v2.057h1.375v-2.068
+        c4.464-0.374,7.677-3.818,7.677-8.505C46.416,3.605,42.81,0,37.929,0z M38.739,15.156v-1.702h-1.375v1.727
+        c-3.347-0.271-5.794-2.935-5.794-6.607c0-3.878,2.726-6.665,6.358-6.665c3.67,0,6.365,2.787,6.365,6.665
+        C44.294,12.131,41.987,14.777,38.739,15.156z"></path>
+    <polygon fill="#FFFFFF" points="7.339,1.035 0,17.249 1.524,17.249 2.004,17.249 8.073,17.249 8.073,15.445 2.82,15.445 
+        3.977,12.887 4.835,10.993 8.117,3.801 11.426,10.993 12.259,12.887 14.29,17.249 16.319,17.249 8.897,1.035 	"></polygon>
+    <polygon fill="#FFFFFF" points="94.97,1.036 87.63,17.251 89.63,17.251 89.631,17.249 95.788,17.249 95.788,15.445 90.447,15.445 
+        91.604,12.889 92.465,10.994 95.745,3.803 99.058,10.994 99.889,12.889 101.92,17.251 103.947,17.251 96.525,1.036 	"></polygon>
+  </g>
+  <g opacity="0.4">
+    <path fill="#FFFFFF" d="M73.708,26.965l-1.914-2.364h0.724l1.562,1.905l1.552-1.905h0.715l-1.914,2.337l1.967,2.417H75.64
+        l-1.578-1.958l-1.597,1.958h-0.697L73.708,26.965z"></path>
+    <path fill="#FFFFFF" d="M82.464,24.601h2.726c0.936,0,1.491,0.494,1.491,1.288s-0.521,1.385-1.411,1.385h-2.215v2.082h-0.591
+        V24.601z M85.154,26.718c0.601,0,0.908-0.273,0.908-0.777c0-0.494-0.308-0.793-0.882-0.793h-2.126v1.57H85.154z"></path>
+    <path fill="#FFFFFF" d="M107.588,26.992c0,1.367-0.908,2.364-2.496,2.364h-2.038v-4.754h2.038
+        C106.636,24.601,107.588,25.615,107.588,26.992z M103.646,25.148v3.661h1.446c1.227,0,1.888-0.759,1.888-1.826
+        c0-1.067-0.706-1.834-1.888-1.834H103.646z"></path>
+    <path fill="#FFFFFF" d="M113.927,24.575h0.6v4.798h-0.6V24.575z"></path>
+    <path fill="#FFFFFF" d="M122.074,25.148h-2.002v-0.547h4.596v0.547h-2.003v4.208h-0.591V25.148z"></path>
+    <path fill="#FFFFFF" d="M130.222,24.575h0.601v4.798h-0.601V24.575z"></path>
+    <path fill="#FFFFFF" d="M137.161,26.992c0-1.447,1.041-2.497,2.461-2.497c1.421,0,2.471,1.05,2.471,2.497
+        c0,1.446-1.05,2.487-2.471,2.487C138.202,29.479,137.161,28.438,137.161,26.992z M141.475,26.992c0-1.129-0.784-1.941-1.853-1.941
+        c-1.058,0-1.853,0.812-1.853,1.941c0,1.129,0.795,1.932,1.853,1.932C140.69,28.923,141.475,28.112,141.475,26.992z"></path>
+    <path fill="#FFFFFF" d="M148.422,24.601h0.309l3.088,3.555v-3.555h0.591v4.754h-0.3l-3.097-3.555v3.555h-0.591V24.601z"></path>
+    <g>
+      <rect x="62.904" y="26.701" fill="#FFFFFF" width="3.527" height="0.547"></rect>
+      <rect x="62.904" y="28.809" fill="#FFFFFF" width="3.527" height="0.547"></rect>
+      <rect x="62.904" y="24.601" fill="#FFFFFF" width="3.527" height="0.547"></rect>
+    </g>
+    <g>
+      <rect x="93.152" y="26.709" fill="#FFFFFF" width="3.527" height="0.547"></rect>
+      <rect x="93.152" y="28.817" fill="#FFFFFF" width="3.527" height="0.547"></rect>
+      <rect x="93.152" y="24.61" fill="#FFFFFF" width="3.527" height="0.547"></rect>
+    </g>
+  </g>
+</svg>
+</a>
+</body>
+<script>
+(function() {
+  var COLORS, FRICTION, GRAVITY, MAX_FORCE, NUM_PARTICLES, Particle, TAIL_LENGTH;
+
+  NUM_PARTICLES = 260;
+
+  TAIL_LENGTH = 8;
+
+  MAX_FORCE = 12;
+
+  FRICTION = 0.48;
+
+  GRAVITY = 9.81;
+
+  COLORS = ['#fff'];
+
+  Particle = class Particle {
+    constructor(x1 = 0.0, y1 = 0.0, mass = 1.0) {
+      this.x = x1;
+      this.y = y1;
+      this.mass = mass;
+      this.tail = [];
+      this.radius = this.mass * 0.25;
+      this.charge = random([-1, 1]);
+      this.color = random(COLORS);
+      this.fx = this.fy = 0.0;
+      this.vx = this.vy = 0.0;
+    }
+
+  };
+
+  Sketch.create({
+    particles: [],
+    interval: 3,
+    setup: function() {
+      var i, k, m, ref, results, x, y;
+      results = [];
+      for (i = k = 0, ref = NUM_PARTICLES; k <= ref; i = k += 1) {
+        x = random(this.width);
+        y = random(this.height);
+        m = random(8.0, 14.0);
+        results.push(this.particles.push(new Particle(x, y, m)));
+      }
+      return results;
+    },
+    draw: function() {
+      var a, b, dSq, dst, dx, dy, f, fx, fy, i, j, k, l, len, len1, n, p, rad, ref, ref1, ref2, ref3, results;
+      this.lineCap = this.lineJoin = 'round';
+      results = [];
+      for (i = k = 0, ref = NUM_PARTICLES; k <= ref; i = k += 1) {
+        a = this.particles[i];
+        // invert charge
+        if (random() < 0.5) {
+          a.charge = -a.charge;
+        }
+        for (j = l = ref1 = i + 1, ref2 = NUM_PARTICLES; l <= ref2; j = l += 1) {
+          b = this.particles[j];
+          
+          // delta vector
+          dx = b.x - a.x;
+          dy = b.y - a.y;
+          
+          // distance
+          dst = sqrt(dSq = (dx * dx + dy * dy) + 0.1);
+          rad = a.radius + b.radius;
+          if (dst >= rad) {
+            
+            // derivative of unit length for normalisation
+            len = 1.0 / dst;
+            fx = dx * len;
+            fy = dy * len;
+            
+            // gravitational force
+            f = min(MAX_FORCE, (GRAVITY * a.mass * b.mass) / dSq);
+            a.fx += f * fx * b.charge;
+            a.fy += f * fy * b.charge;
+            b.fx += -f * fx * a.charge;
+            b.fy += -f * fy * a.charge;
+          }
+        }
+        
+        // integrate
+        a.vx += a.fx;
+        a.vy += a.fy;
+        a.vx *= FRICTION;
+        a.vy *= FRICTION;
+        a.tail.unshift({
+          x: a.x,
+          y: a.y
+        });
+        if (a.tail.length > TAIL_LENGTH) {
+          a.tail.pop();
+        }
+        a.x += a.vx;
+        a.y += a.vy;
+        
+        // reset force
+        a.fx = a.fy = 0.0;
+        
+        // wrap
+        if (a.x > this.width + a.radius) {
+          a.x = -a.radius;
+          a.tail = [];
+        } else if (a.x < -a.radius) {
+          a.x = this.width + a.radius;
+          a.tail = [];
+        }
+        if (a.y > this.height + a.radius) {
+          a.y = -a.radius;
+          a.tail = [];
+        } else if (a.y < -a.radius) {
+          a.y = this.height + a.radius;
+          a.tail = [];
+        }
+        
+        // draw
+        this.strokeStyle = a.color;
+        this.lineWidth = a.radius * 0.1;
+        this.beginPath();
+        this.moveTo(a.x, a.y);
+        ref3 = a.tail;
+        for (n = 0, len1 = ref3.length; n < len1; n++) {
+          p = ref3[n];
+          this.lineTo(p.x, p.y);
+        }
+        results.push(this.stroke());
+      }
+      return results;
+    }
+  });
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiPGFub255bW91cz4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7QUFBQSxNQUFBLE1BQUEsRUFBQSxRQUFBLEVBQUEsT0FBQSxFQUFBLFNBQUEsRUFBQSxhQUFBLEVBQUEsUUFBQSxFQUFBOztFQUFBLGFBQUEsR0FBZ0I7O0VBQ2hCLFdBQUEsR0FBYzs7RUFDZCxTQUFBLEdBQVk7O0VBQ1osUUFBQSxHQUFXOztFQUNYLE9BQUEsR0FBVTs7RUFFVixNQUFBLEdBQVMsQ0FDUCxNQURPOztFQUlILFdBQU4sTUFBQSxTQUFBO0lBRUUsV0FBYSxNQUFPLEdBQVAsT0FBaUIsR0FBakIsU0FBOEIsR0FBOUIsQ0FBQTtNQUFFLElBQUMsQ0FBQTtNQUFTLElBQUMsQ0FBQTtNQUFTLElBQUMsQ0FBQTtNQUVsQyxJQUFDLENBQUEsSUFBRCxHQUFRO01BRVIsSUFBQyxDQUFBLE1BQUQsR0FBVSxJQUFDLENBQUEsSUFBRCxHQUFRO01BQ2xCLElBQUMsQ0FBQSxNQUFELEdBQVUsTUFBQSxDQUFPLENBQUUsQ0FBQyxDQUFILEVBQU0sQ0FBTixDQUFQO01BQ1YsSUFBQyxDQUFBLEtBQUQsR0FBUyxNQUFBLENBQU8sTUFBUDtNQUVULElBQUMsQ0FBQSxFQUFELEdBQU0sSUFBQyxDQUFBLEVBQUQsR0FBTTtNQUNaLElBQUMsQ0FBQSxFQUFELEdBQU0sSUFBQyxDQUFBLEVBQUQsR0FBTTtJQVREOztFQUZmOztFQWFBLE1BQU0sQ0FBQyxNQUFQLENBRUU7SUFBQSxTQUFBLEVBQVcsRUFBWDtJQUNBLFFBQUEsRUFBVSxDQURWO0lBSUEsS0FBQSxFQUFPLFFBQUEsQ0FBQSxDQUFBO0FBRVQsVUFBQSxDQUFBLEVBQUEsQ0FBQSxFQUFBLENBQUEsRUFBQSxHQUFBLEVBQUEsT0FBQSxFQUFBLENBQUEsRUFBQTtBQUFJO01BQUEsS0FBUyxvREFBVDtRQUVFLENBQUEsR0FBSSxNQUFBLENBQU8sSUFBQyxDQUFBLEtBQVI7UUFDSixDQUFB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QTs7SUFKSTtFQWROLENBRkY7QUF2QkEiLCJzb3VyY2VzQ29udGVudCI6WyJcbk5VTV9QQVJUSUNMRVMgPSAyNjBcblRBSUxfTEVOR1RIID0gOFxuTUFYX0ZPUkNFID0gMTJcbkZSSUNUSU9OID0gMC40OFxuR1JBVklUWSA9IDkuODFcbiAgXG5DT0xPUlMgPSBbXG4gICcjZmZmJ1xuICBdXG4gIFxuY2xhc3MgUGFydGljbGVcbiAgXG4gIGNvbnN0cnVjdG9yOiAoIEB4ID0gMC4wLCBAeSA9IDAuMCwgQG1hc3MgPSAxLjAgKSAtPlxuXG4gICAgQHRhaWwgPSBbXVxuICAgIFxuICAgIEByYWRpdXMgPSBAbWFzcyAqIDAuMjVcbiAgICBAY2hhcmdlID0gcmFuZG9tIFsgLTEsIDEgXVxuICAgIEBjb2xvciA9IHJhbmRvbSBDT0xPUlNcbiAgICBcbiAgICBAZnggPSBAZnkgPSAwLjBcbiAgICBAdnggPSBAdnkgPSAwLjBcbiAgICBcblNrZXRjaC5jcmVhdGVcbiAgXG4gIHBhcnRpY2xlczogW11cbiAgaW50ZXJ2YWw6IDNcbiAgXG4gICAgXG4gIHNldHVwOiAtPlxuICAgIFxuICAgIGZvciBpIGluIFswLi5OVU1fUEFSVElDTEVTXSBieSAxXG4gICAgICBcbiAgICAgIHggPSByYW5kb20gQHdpZHRoXG4gICAgICB5ID0gcmFuZG9tIEBoZWlnaHRcbiAgICAgIG0gPSByYW5kb20gOC4wLCAxNC4wXG4gICAgICAgIFxuICAgICAgQHBhcnRpY2xlcy5wdXNoIG5ldyBQYXJ0aWNsZSB4LCB5LCBtXG4gICAgXG4gIGRyYXc6IC0+XG5cbiAgICBAbGluZUNhcCA9IEBsaW5lSm9pbiA9ICdyb3VuZCdcblxuICAgIGZvciBpIGluIFswLi5OVU1fUEFSVElDTEVTXSBieSAxXG4gICAgICBcbiAgICAgIGEgPSBAcGFydGljbGVzW2ldXG5cbiAgICAgICMgaW52ZXJ0IGNoYXJnZVxuICAgICAgaWYgcmFuZG9tKCkgPCAwLjUgdGhlbiBhLmNoYXJnZSA9IC1hLmNoYXJnZVxuICAgICAgXG4gICAgICBmb3IgaiBpbiBbaSsxLi5OVU1fUEFSVElDTEVTXSBieSAxXG4gICAgICAgIFxuICAgICAgICBiID0gQHBhcnRpY2xlc1tqXVxuICAgICAgICBcbiAgICAgICAgIyBkZWx0YSB2ZWN0b3JcbiAgICAgICAgZHggPSBiLnggLSBhLnhcbiAgICAgICAgZHkgPSBiLnkgLSBhLnlcbiAgICAgICAgXG4gICAgICAgICMgZGlzdGFuY2VcbiAgICAgICAgZHN0ID0gc3FydCBkU3EgPSAoIGR4ICogZHggKyBkeSAqIGR5ICkgKyAwLjFcbiAgICAgICAgcmFkID0gYS5yYWRpdXMgKyBiLnJhZGl1c1xuICAgICAgICBcbiAgICAgICAgaWYgZHN0ID49IHJhZFxuICAgICAgXG4gICAgICAgICAgIyBkZXJpdmF0aXZlIG9mIHVuaXQgbGVuZ3RoIGZvciBub3JtYWxpc2F0aW9uXG4gICAgICAgICAgbGVuID0gMS4wIC8gZHN0XG4gICAgICAgIFxuICAgICAgICAgIGZ4ID0gZHggKiBsZW5cbiAgICAgICAgICBmeSA9IGR5ICogbGVuXG4gICAgICAgIFxuICAgICAgICAgICMgZ3Jhdml0YXRpb25hbCBmb3JjZVxuICAgICAgICAgIGYgPSBtaW4gTUFYX0ZPUkNFLCAoIEdSQVZJVFkgKiBhLm1hc3MgKiBiLm1hc3MgKSAvIGRTcVxuICAgICAgICAgICAgXG4gICAgICAgICAgYS5meCArPSBmICogZnggKiBiLmNoYXJnZVxuICAgICAgICAgIGEuZnkgKz0gZiAqIGZ5ICogYi5jaGFyZ2VcbiAgICAgICAgICBcbiAgICAgICAgICBiLmZ4ICs9IC1mICogZnggKiBhLmNoYXJnZVxuICAgICAgICAgIGIuZnkgKz0gLWYgKiBmeSAqIGEuY2hhcmdlXG4gICAgICAgICAgXG4gICAgICAjIGludGVncmF0ZVxuICAgICAgYS52eCArPSBhLmZ4XG4gICAgICBhLnZ5ICs9IGEuZnlcbiAgICAgICAgXG4gICAgICBhLnZ4ICo9IEZSSUNUSU9OXG4gICAgICBhLnZ5ICo9IEZSSUNUSU9OXG5cbiAgICAgIGEudGFpbC51bnNoaWZ0IHg6IGEueCwgeTogYS55XG4gICAgICBhLnRhaWwucG9wKCkgaWYgYS50YWlsLmxlbmd0aCA+IFRBSUxfTEVOR1RIXG4gICAgICAgIFxuICAgICAgYS54ICs9IGEudnhcbiAgICAgIGEueSArPSBhLnZ5XG4gICAgICAgIFxuICAgICAgIyByZXNldCBmb3JjZVxuICAgICAgYS5meCA9IGEuZnkgPSAwLjBcbiAgICAgIFxuICAgICAgIyB3cmFwXG4gICAgICAgIFxuICAgICAgaWYgYS54ID4gQHdpZHRoICsgYS5yYWRpdXNcblxuICAgICAgICBhLnggPSAtYS5yYWRpdXNcbiAgICAgICAgYS50YWlsID0gW11cblxuICAgICAgZWxzZSBpZiBhLnggPCAtYS5yYWRpdXNcblxuICAgICAgICBhLnggPSBAd2lkdGggKyBhLnJhZGl1c1xuICAgICAgICBhLnRhaWwgPSBbXVxuICAgICAgXG4gICAgICBpZiBhLnkgPiBAaGVpZ2h0ICsgYS5yYWRpdXNcblxuICAgICAgICBhLnkgPSAtYS5yYWRpdXNcbiAgICAgICAgYS50YWlsID0gW11cblxuICAgICAgZWxzZSBpZiBhLnkgPCAtYS5yYWRpdXNcblxuICAgICAgICBhLnkgPSBAaGVpZ2h0ICsgYS5yYWRpdXNcbiAgICAgICAgYS50YWlsID0gW11cbiAgICAgICAgICBcbiAgICAgICMgZHJhd1xuICAgICAgQHN0cm9rZVN0eWxlID0gYS5jb2xvclxuICAgICAgQGxpbmVXaWR0aCA9IGEucmFkaXVzICogMC4xXG5cbiAgICAgIEBiZWdpblBhdGgoKVxuICAgICAgQG1vdmVUbyBhLngsIGEueVxuICAgICAgQGxpbmVUbyBwLngsIHAueSBmb3IgcCBpbiBhLnRhaWxcbiAgICAgIEBzdHJva2UoKVxuIl19
+//# sourceURL=coffeescript
+</script>
+</html>
