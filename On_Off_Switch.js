@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Antonio&display=swap");
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	--h: 0;
+	--s: 0%;
+	--l: 25%;
+	--bg: hsl(var(--h), var(--s), var(--l));
+
+	--size: 20vmin;
+	--z: 0;
+	--dur: 250ms;
+	--ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+	display: grid;
+	overflow: hidden;
+	perspective: 50em;
+	font-family: "Antonio", sans-serif;
+	text-transform: uppercase;
+	background-color: var(--bg);
+	transition: background-color var(--dur) var(--ease);
+}
+
+[data-switch="on"] {
+	--h: 205;
+	--s: 80%;
+	--l: 100%;
+}
+
+.switch {
+	margin: auto;
+	display: grid;
+	place-items: center;
+	grid-template-rows: 1fr auto auto 1fr;
+	transform-style: preserve-3d;
+	transform: scale(0);
+	animation: animate-in 1600ms 400ms var(--ease) forwards;
+}
+
+@keyframes animate-in {
+	from {
+		transform: rotateX(0) rotateZ(0) scale(0);
+	}
+	to {
+		transform: rotateX(45deg) rotateZ(45deg) scale(1);
+	}
+}
+
+.switch::before {
+	content: "";
+	position: relative;
+	grid-column: 1 / -1;
+	grid-row: 1 / -1;
+	pointer-events: none;
+	width: calc(var(--size) * 2);
+	height: calc(var(--size) * 3);
+	background-color: hsl(var(--h) var(--s) calc(var(--l) - 10%));
+	transform: translateZ(-1px);
+	transition: background-color var(--dur) var(--ease);
+}
+
+.switch input {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.switch label {
+	--focus-border: 2px dashed dodgerblue;
+	--focus-offset: -1vmin;
+
+	grid-column: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+	cursor: pointer;
+	font-size: calc(var(--size) / 3);
+	line-height: 1;
+	text-shadow: hsla(0, 0%, 0%, 0.05) 2px 2px 0.2vmin;
+	color: hsl(var(--h) var(--s) calc(var(--l) - 50%));
+	width: var(--size);
+	height: var(--size);
+	background-color: hsl(var(--h) var(--s) var(--l));
+	transform-style: preserve-3d;
+	transition: var(--dur) var(--ease);
+	transition-property: background-color, color, transform;
+}
+
+.switch input:focus + label {
+	outline: var(--focus-border);
+	outline-offset: var(--focus-offset);
+}
+
+.switch input:focus:not(:focus-visible) + label {
+	outline: none;
+}
+
+.switch input:focus-visible + label {
+	outline: var(--focus-border);
+	outline-offset: var(--focus-offset);
+}
+
+.switch label::before,
+.switch label::after {
+	position: absolute;
+	right: 0;
+	pointer-events: none;
+	transition: background-color var(--dur) var(--ease);
+}
+
+.switch label::before {
+	bottom: 0;
+}
+
+.switch input:checked + label {
+	cursor: initial;
+	background-color: hsl(var(--h) var(--s) calc(var(--l) - 5%));
+}
+
+.switch label:first-of-type {
+	grid-row: 2;
+	transform-origin: center bottom;
+	transform: rotateX(-25deg);
+}
+
+.switch label:last-of-type {
+	grid-row: 3;
+	transform-origin: center top;
+	transform: rotateX(25deg);
+}
+
+.switch input:checked + label {
+	transform: rotateX(0);
+}
+
+.switch label::before,
+.switch label::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.switch label::before {
+	height: calc(var(--size) / 2);
+	background-color: hsl(var(--h) var(--s) calc(var(--l) - 15%));
+}
+
+.switch label::after {
+	width: calc(var(--size) / 2);
+	transform-origin: center right;
+	background-color: hsl(var(--h) var(--s) calc(var(--l) - 20%));
+}
+
+.switch label:first-of-type::before {
+	transform-origin: top center;
+	transform: rotateX(-65deg);
+}
+
+.switch label:last-of-type::before {
+	transform-origin: bottom center;
+	transform: rotateX(65deg);
+}
+
+.switch label:first-of-type::after {
+	transform: rotateY(-90deg) skewY(-25deg);
+}
+
+.switch label:last-of-type::after {
+	transform-origin: center right;
+	transform: rotateY(-90deg) skewY(25deg);
+}
+
+</style>
+<body>
+  
+<div class="switch">
+  <input id="on" type="radio" name="status" value="on"/>
+  <label for="on">on</label>
+  <input id="off" type="radio" name="status" value="off" checked="checked"/>
+  <label for="off">off</label>
+</div>
+</body>
+<script>
+document.querySelectorAll(".switch input").forEach((radio) => {
+	radio.addEventListener("change", () => {
+		document.body.dataset.switch = radio.value;
+	});
+});
+
+</script>
+</html>
