@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Design</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<style>
+  body{
+	margin: 0;
+	padding: 0;
+	background: #f2f2f2;
+}
+
+.container  {
+	position: relative;
+  	background: #fff;
+	height: auto;
+  	margin: 2% auto;
+  	padding: 2%;
+  	width: 80%;
+}
+
+.base-heading  {
+	margin: 10px auto;
+  	align-items: center;
+  	background: #fff;
+  	display: flex;
+  	flex-direction: row;
+}
+
+.heading  {
+	position: relative;
+  	background: #fff;
+  	height: 15%;
+  	text-align: center;
+}
+
+.box  {
+	content: '';
+	background: #494c51;
+	height: 30vh;
+	margin: auto;
+	width: 60vh;
+}
+
+.heading p  {
+	font-size: 1em;
+	font-family: arial;
+	color: #000;
+}
+
+@media(max-width: 990px) {
+
+	.container {
+		width: 90%;
+		box-sizing: border-box;
+	}
+
+	.base-heading  {
+		width: 80%;
+		height: auto;
+		flex-direction: row-reverse;
+	}
+
+	.box  {
+		height: 200px;
+		width: 500px;
+		
+	}
+}
+
+@media(max-width: 770px) {
+		
+	/*.container {
+		width: 90%;
+		box-sizing: border-box;
+	}*/
+
+	.base-heading  {
+		width: 100%;
+		/*height: auto;*/
+		flex-direction: column;
+	}
+
+	.box  {
+		height: 20vh;
+		width: 80%;
+		
+	}
+}
+</style>
+<body>
+	<div class="container">
+		<div class="base-heading">
+			<div class="box"></div>
+			<div class="heading">
+				<h1>First featurette heading.</h1> 
+				<h2>It’ll blow your mind.</h2>
+				<p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+		</div>	
+	</div>
+
+	
+</body>
+</html>
