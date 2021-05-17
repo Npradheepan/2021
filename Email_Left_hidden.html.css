@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title>Web Design</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+</head>
+<style>
+  body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.banner {
+	width: 100%;
+	height: 100vh;
+	background: url(images/ddf.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.content {
+	padding: 50px 100px;
+
+}
+.content h1  {
+	margin: 0 0 20px;
+	padding: 0;
+	font-size: 30px;
+}
+.content p {
+	font-size: 18px;
+}
+.sidebar-contant {
+	position: fixed;
+	top: 50%;
+	left: -350px;
+	transform: translateY(-50%);
+	width: 350px;
+	height: auto;
+	padding: 40px;
+	background: #fff;
+	box-shadow: 0 20px 50px rgba(0,0,0.5);
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+.sidebar-contant.active {
+	left: 0px;
+}
+.sidebar-contant input,.sidebar-contant textarea {
+	width: 100%;
+	height: 36px;
+	padding: 5px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border: 1px solid rgba(0,0,0,.5);
+	outline: none;
+}
+.sidebar-contant textarea  {
+	height: 60px;
+	resize: none;
+}
+.sidebar-contant input[type="submit" ]{
+	background: #00bcd4;
+	color: #fff;
+	cursor: pointer;
+	border:none;
+	font-size: 18px;
+}
+.sidebar-contant h2 {
+	margin: 0 0 20px;
+	padding: 0;
+
+}
+.toggle {
+	position: absolute;
+	top: 0;
+	right: -48px;
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	cursor: pointer;
+	background: #f00;
+	text-align: center;
+
+}
+.toggle:before {
+	content: '\f003';
+	font-family: fontAwesome;
+	color: #3fff;
+	font-size: 18px;
+}
+.toggle.active:before {
+	content: '\f00d';
+}
+
+</style>
+<body>
+	<div class="sidebar-contant">
+		<div class="toggle"></div>
+		<h2>contact Us</h2>
+		<form>
+			<input type="text" name="" placeholder="Name">
+			<input type="email" name="" placeholder="Email">
+			<input type="rel" name="" placeholder="phone Number">
+			<textarea placeholder="Massage"></textarea>
+			<input type="submit" name="" placeholder="Send">
+		</form>
+	</div>
+	<div class="banner"></div>
+	<div class="content">
+		<h1>'No way to change' Brexit deal, says Merkel after May visit</h1>
+		<p> Merkel also stressed to May that any agreements on Brexit could only be struck with the EU as a whole, not bilaterally with member states.
+
+It came after an embarrassing moment for May as she got stuck in her car when she arrived for the crisis Brexit talks with Merkel in Berlin.
+
+The Prime Minister found herself locked in with officials struggling to get the door open, as the Chancellor waited patiently on the red carpet.
+
+May put on a brave face and smiled as she finally emerged to greet Merkel before they went for lunch together.  May visited three European capitals Tuesday in a desperate bid to salvage her Brexit deal, a day after delaying a parliamentary vote on the text to avoid a crushing defeat.
+
+May's schedule included meetings with Dutch Prime Minister Mark Rutte, Merkel and European Commission chief Jean-Claude Juncker.
+
+She was seeking "reassurances" over provisions in the EU withdrawal agreement concerning Northern Ireland, which she hopes could persuade her rebellious Conservative party to support it.
+
+Like Merkel, EU leaders and the major parties in the European Parliament also reject amendments to the 585-page Brexit agreement. "Everyone must know that the treaty will not be reopened," Juncker said in the EU Parliament. But he was open to "clarifications". There is room for manoeuvre without changing the agreement itself, he said.</p><p> Merkel also stressed to May that any agreements on Brexit could only be struck with the EU as a whole, not bilaterally with member states.
+
+It came after an embarrassing moment for May as she got stuck in her car when she arrived for the crisis Brexit talks with Merkel in Berlin.
+
+The Prime Minister found herself locked in with officials struggling to get the door open, as the Chancellor waited patiently on the red carpet.
+
+May put on a brave face and smiled as she finally emerged to greet Merkel before they went for lunch together.  May visited three European capitals Tuesday in a desperate bid to salvage her Brexit deal, a day after delaying a parliamentary vote on the text to avoid a crushing defeat.
+
+May's schedule included meetings with Dutch Prime Minister Mark Rutte, Merkel and European Commission chief Jean-Claude Juncker.
+
+She was seeking "reassurances" over provisions in the EU withdrawal agreement concerning Northern Ireland, which she hopes could persuade her rebellious Conservative party to support it.
+
+Like Merkel, EU leaders and the major parties in the European Parliament also reject amendments to the 585-page Brexit agreement. "Everyone must know that the treaty will not be reopened," Juncker said in the EU Parliament. But he was open to "clarifications". There is room for manoeuvre without changing the agreement itself, he said.</p><p> Merkel also stressed to May that any agreements on Brexit could only be struck with the EU as a whole, not bilaterally with member states.
+
+It came after an embarrassing moment for May as she got stuck in her car when she arrived for the crisis Brexit talks with Merkel in Berlin.
+
+The Prime Minister found herself locked in with officials struggling to get the door open, as the Chancellor waited patiently on the red carpet.
+
+May put on a brave face and smiled as she finally emerged to greet Merkel before they went for lunch together.  May visited three European capitals Tuesday in a desperate bid to salvage her Brexit deal, a day after delaying a parliamentary vote on the text to avoid a crushing defeat.
+
+May's schedule included meetings with Dutch Prime Minister Mark Rutte, Merkel and European Commission chief Jean-Claude Juncker.
+
+She was seeking "reassurances" over provisions in the EU withdrawal agreement concerning Northern Ireland, which she hopes could persuade her rebellious Conservative party to support it.
+
+Like Merkel, EU leaders and the major parties in the European Parliament also reject amendments to the 585-page Brexit agreement. "Everyone must know that the treaty will not be reopened," Juncker said in the EU Parliament. But he was open to "clarifications". There is room for manoeuvre without changing the agreement itself, he said.</p><p> Merkel also stressed to May that any agreements on Brexit could only be struck with the EU as a whole, not bilaterally with member states.
+
+It came after an embarrassing moment for May as she got stuck in her car when she arrived for the crisis Brexit talks with Merkel in Berlin.
+
+The Prime Minister found herself locked in with officials struggling to get the door open, as the Chancellor waited patiently on the red carpet.
+
+May put on a brave face and smiled as she finally emerged to greet Merkel before they went for lunch together.  May visited three European capitals Tuesday in a desperate bid to salvage her Brexit deal, a day after delaying a parliamentary vote on the text to avoid a crushing defeat.
+
+May's schedule included meetings with Dutch Prime Minister Mark Rutte, Merkel and European Commission chief Jean-Claude Juncker.
+
+She was seeking "reassurances" over provisions in the EU withdrawal agreement concerning Northern Ireland, which she hopes could persuade her rebellious Conservative party to support it.
+
+Like Merkel, EU leaders and the major parties in the European Parliament also reject amendments to the 585-page Brexit agreement. "Everyone must know that the treaty will not be reopened," Juncker said in the EU Parliament. But he was open to "clarifications". There is room for manoeuvre without changing the agreement itself, he said.</p><p> Merkel also stressed to May that any agreements on Brexit could only be struck with the EU as a whole, not bilaterally with member states.
+
+It came after an embarrassing moment for May as she got stuck in her car when she arrived for the crisis Brexit talks with Merkel in Berlin.
+
+The Prime Minister found herself locked in with officials struggling to get the door open, as the Chancellor waited patiently on the red carpet.
+
+May put on a brave face and smiled as she finally emerged to greet Merkel before they went for lunch together.  May visited three European capitals Tuesday in a desperate bid to salvage her Brexit deal, a day after delaying a parliamentary vote on the text to avoid a crushing defeat.
+
+May's schedule included meetings with Dutch Prime Minister Mark Rutte, Merkel and European Commission chief Jean-Claude Juncker.
+
+She was seeking "reassurances" over provisions in the EU withdrawal agreement concerning Northern Ireland, which she hopes could persuade her rebellious Conservative party to support it.
+
+Like Merkel, EU leaders and the major parties in the European Parliament also reject amendments to the 585-page Brexit agreement. "Everyone must know that the treaty will not be reopened," Juncker said in the EU Parliament. But he was open to "clarifications". There is room for manoeuvre without changing the agreement itself, he said.</p>
+	</div>
+
+</body>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.toggle').click(function(){
+      $('.sidebar-contant').toggleClass('active')
+      $('.toggle').toggleClass('active')
+    })
+  })
+</script>
+</html>
