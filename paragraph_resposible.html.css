@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title>Web Design</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<style>
+  body {
+	background: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.round-heading-container  {
+	position: relative;
+  	background: #fff;
+	height: auto;
+  	margin: 2% auto;
+  	padding: 2%;
+  	width: 80%;
+  	
+ }
+
+ .mom-heading  {
+	margin: 10px auto;
+  	align-items: center;
+  	background: #fff;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+}
+
+.heading  {
+	position: relative;
+  	background: #fff;
+  	height: 15%;
+  	text-align: center;
+  	line-height: 20px;
+  	padding: 30px;
+}
+
+.round  {
+	background: #494c51;
+	border-radius: 100px;
+	content: '';
+	height: 10vh;
+	margin: auto;
+	width: 10vh;
+}
+
+.heading p  {
+	font-size: 1em;
+	font-family: arial;
+	color: #000;
+	margin: 10px;
+}
+
+@media(min-width: 990px) {
+
+	.round-heading-container {
+		width: 90%;
+		box-sizing: border-box;
+	}
+
+	.mom-heading  {
+		width: 88%;
+		height: auto;
+		flex-direction: row;
+		max-width: 1200px;
+	}
+}
+</style>
+<body>
+	<div class="round-heading-container">
+		<div class="mom-heading">
+
+			<div class="heading heading-1">
+				<div class="round"></div>
+				<h2>Heading</h2>
+				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				<a href="#">view detail &#187; </a>
+			</div>
+
+			<div class="heading heading-2">
+				<div class="round"></div>
+				<h2>Heading</h2>
+				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna..</p>
+				<a href="#">view detail &#187; </a>
+			</div>
+
+			<div class="heading heading-3">
+				<div class="round"></div>
+				<h2>Heading</h2>
+				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				<a href="#">view detail &#187; </a>
+			</div>
+
+		</div>	
+	</div>
+
+</body>
+</html>
