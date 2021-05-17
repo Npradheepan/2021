@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+
+  <title>La Fonda - Newsletter</title>
+  <style type="text/css">
+    a,
+    div,
+    li,
+    p,
+    td {
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    table,
+    table td {
+      border-collapse: collapse;
+      border: 0px;
+    }
+
+
+    /*.msoFix { mso-table-lspace:-1pt; mso-table-rspace:-1pt; }*/
+
+
+    @media only screen and (max-width: 650px) {
+
+      *[class~=hide_on_mobile] {
+        display: none !important;
+      }
+
+      *[class~=show_on_mobile] {
+        display: block !important;
+        width: auto !important;
+        max-height: inherit !important;
+        overflow: visible !important;
+        float: none !important;
+      }
+
+      table.container {
+        width: 100% !important;
+      }
+
+      table.w100 {
+        width: 100% !important;
+      }
+
+      table.w50 {
+        width: 50% !important;
+      }
+
+      table.left-table {
+        border-right: 0 !important;
+      }
+
+      td.opt20 {
+        padding-top: 20% !important;
+      }
+
+      a.produkt-pic img {
+        width: 100%;
+      }
+
+
+      table.footer-top-deco-line {
+        width: 100% !important;
+      }
+
+      table.footer-top-menu-item {
+        width: 100% !important;
+      }
+
+      table.footer-menu table {
+        width: 100% !important;
+      }
+
+      table.footer-menu table.last {
+        width: 100% !important;
+      }
+
+      table.footer-menu table td {
+        text-align: center;
+        width: 100% !important;
+      }
+
+      table.footer-menu table td a {
+        font-size: 16px !important;
+      }
+
+      .mobile-padding {
+        padding-top: 90px !important;
+      }
+
+      .hide-border--mobile {
+        border: none !important;
+      }
+
+      .add-border-bottom--mobile {
+        border-bottom: 1px solid #403f3f !important;
+        padding-bottom: 60px;
+      }
+    }
+
+
+    @media only screen and (max-width: 555px) {
+      img.dbl-line {
+        width: 100% !important;
+      }
+    }
+
+    @media only screen and (max-width: 472px) {
+      img.img100p {
+        width: 100% !important;
+      }
+    }
+
+
+    @media only screen and (max-width: 472px) {
+      table.w100 {
+        width: 100% !important;
+      }
+
+      table.w50 {
+        width: 50% !important;
+      }
+
+      .smaller-font {
+        font-size: 24px !important;
+        line-height: 34px !important;
+      }
+
+      .small-font--mobile {
+        font-size: 13px !important;
+        line-height: 20px !important;
+      }
+
+      .mobile-wider {
+        width: 75% !important;
+      }
+
+      .mobile-wider-95 {
+        width: 95% !important;
+      }
+
+      .mobile-padding {
+        padding-top: 85px !important;
+      }
+
+      table.mobiledemarger {
+        margin-top: -50px !important;
+      }
+    }
+
+    @media only screen and (max-width: 380px) {
+      .mobile-wider-95 {
+        width: 100% !important;
+      }
+
+      .mobile-padding {
+        padding-top: 90px !important;
+      }
+    }
+
+    @media only screen and (min-width: 649px) {
+      table.header1 {
+        min-height: 409px
+      }
+    }
+  </style>
+
+  <!--[if gte mso 9]>
+  <style type="text/css">
+    td.opt20 {padding: 41px 0 71px 0 !important;}
+  </style>
+  <![endif]-->
+
+</head>
+
+<body bgcolor="#f6f5ef" style="margin: 0; padding: 0; height: 100%;">
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <!-- double lines -->
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#f6f5ef">
+          <tr>
+            <td valign="middle" height="17" align="center" class="logo" bgcolor="#f6f5ef" style="padding: 10px;"><a href="http://lafonda.koeln" target="_blank" title="La Fonda" style="color: #ffffff;"><img src="https://files.crsend.com/183000/183421/images/general/lafondanl/double-lines.jpg" border="0" alt="La Fonda" width="555" height="17" class="dbl-line" /></a></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!-- logo -->
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#f6f5ef">
+          <tr>
+            <td valign="middle" height="58" align="center" class="logo" bgcolor="#f6f5ef" style="padding-left: 10px; padding-right: 10px; padding-top: 28px; padding-bottom: 40px;"><a href="http://lafonda.koeln" target="_blank" title="La Fonda" style="color: #ffffff;"><img src="https://files.crsend.com/183000/183421/images/general/lafondanl/la-fonda-logo.jpg" border="0" alt="La Fonda" width="173" height="58" /></a></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- teaser pic -->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td valign="top" align="center" class="content" bgcolor="#f6f5ef" style="text-align: center; color: #2c2b2b; padding: 0; margin: 0;  border-bottom: 0px solid #f6f5ef;">
+              <table class="header1" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="bottom" align="center" class="info-box hr" bgcolor="#f6f5ef" style="color: #2c2b2b; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold; padding: 10px; margin: 0;"><a href="http://www.lafonda.koeln/#buchen" target="_blank"><img src="https://files.crsend.com/183000/183421/images/la-fonda-nl/2019/04r/la-fonda--teaser.jpg" alt="" border="0" style="padding: 0; margin: 0; vertical-align: bottom; width: 349px;" class="img100p"></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> <!-- END: teaser pic -->
+
+  <table class="container" width="650" height="30" align="center" border="0" cellpadding="0" cellspacing="0" style="border-bottom: 0px solid #f6f5ef;">
+    <tbody>
+      <tr>
+        <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%" height="30">
+          <!--[if gte mso 9]>
+        </td>
+        <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%">
+          <![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0" style="">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td valign="top" bgcolor="#f6f5ef" style="color: #2c2b2b; border-bottom: 0px solid #f6f5ef;" width="100%">
+              <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" class="content-part">
+                <tbody>
+                  <tr>
+                    <td>
+                      <!-- <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; padding:0; border-spacing: 0; margin:0;" align="center">
+                        <tbody>
+                          <tr>
+                            <td valign="bottom" class="info-box" bgcolor="#f6f5ef" style="background-color: #f6f5ef; text-align: center; font-family: 'Trebuchet MS', Georgia, sans-serif; font-size: 34px; line-height: 34px; font-weight: bold; color: #2c2b2b; margin: 0; padding-top: 15px; padding-bottom: 15px; padding-left: 10px; padding-right: 10px; border-spacing: 0;">
+                              <p class="smaller-font" style="background-color: #f6f5ef; text-align: center; font-family: 'Trebuchet MS', Georgia, sans-serif; font-size: 34px; line-height: 34px; color: #2c2b2b; text-decoration: none; padding: 0; margin: 0;">LIMITED EDITIONS</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table> -->
+                      <table align="center" border="0" cellpadding="0" cellspacing="0" style="padding:0; border-spacing: 0; margin:0; border: 0px solid #f6f5ef;">
+                        <tbody>
+                          <tr>
+                            <td valign="bottom" align="center" class="info-box" bgcolor="#f6f5ef" style="color: #2c2b2b; font-family: 'Trebuchet MS', sans-serif; font-size: 18px; font-weight: normal; padding: 0; margin: 0;">
+                              <p class="small-font--mobile" style="text-align: center; font-family: Georgia, Trebuchet MS, sans-serif; font-style: italic;  font-size: 18px; line-height: 32px; color: #2c2b2b; margin: 0 2% 25px; width: 85%;">Diesen Samstag findet das Winemakers Dinner statt. Seien Sie dabei, wenn Fred Loimer ausgew&auml;hlte Weine aus seinem Sortiment pr&auml;sentiert. Erleben Sie unser &ouml;sterreichisches 4-G&auml;nge Men&uuml;, Aperitif, begleitende Weine und vor allem Fred Loimer pers&ouml;nlich.</p>
+                              <p class="small-font--mobile" style="text-align: center; font-family: Georgia, Trebuchet MS, sans-serif; font-style: italic;  font-size: 18px; line-height: 32px; color: #2c2b2b; margin: 0 2% 25px; width: 75%;">Preis pro Person – 85</p>
+                            </td>
+                          </tr>
+                          <!-- <tr>
+                            <td valign="bottom" align="center" class="info-box" bgcolor="#f6f5ef" style="color: #2c2b2b; background-color: #f6f5ef; font-family: Georgia, Trebuchet MS, sans-serif; font-size: 13px; font-weight: normal; padding: 0; margin: 0; border: 0;"><a href="http://www.lafonda.koeln/#buchen" target="_blank" class="cta"><img src="https://files.crsend.com/83000/183421/images/Qvest+Newsletter/2017/21-2017/button.jpg" alt="" style="padding: 0; margin: 0; vertical-align: top;" border="0" /></a>
+                            </td>
+                          </tr> -->
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- teaser pic -->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td valign="top" align="center" class="content" bgcolor="#f6f5ef" style="text-align: center; color: #2c2b2b; padding: 0; margin: 0;  border-bottom: 0px solid #f6f5ef;">
+              <table class="" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="top" align="center" class="info-box hr" bgcolor="#f6f5ef" style="color: #2c2b2b; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold; padding: 10px; margin: 0;"><a href="http://www.lafonda.koeln/#buchen" target="_blank"><img src="https://files.crsend.com/183000/183421/images/la-fonda-nl/2019/04r/la-fonda--btn-reservieren.jpg" alt="" border="0" style="padding: 0; margin: 0; vertical-align: top; width: 181px;" class=""></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> <!-- END: teaser pic -->
+
+  <!-- la fonda pic -->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td valign="top" align="center" class="content" bgcolor="#f6f5ef" style="text-align: center; color: #2c2b2b; padding: 0; margin: 0;  border-bottom: 0px solid #f6f5ef;">
+              <table class="header1" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="bottom" align="center" class="info-box hr" bgcolor="#f6f5ef" style="color: #2c2b2b; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold; padding: 0; padding-top: 50px; margin: 0;"><a href="http://www.lafonda.koeln/#buchen" target="_blank"><img src="https://s3-eu-west-1.amazonaws.com/files.crsend.com/183000/183421/images/la-fonda-nl/2019/04r/la-fonda--bild-reminder.jpg" alt="" border="0" style="padding: 0; margin: 0; vertical-align: bottom; width: 100%;" class="img100p"></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> <!-- END: la fonda pic -->
+
+  <table class="container" width="650" height="100" align="center" border="0" cellpadding="0" cellspacing="0" style="border-bottom: 0px solid #f6f5ef;">
+    <tbody>
+      <tr>
+        <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%" height="100">
+          <!--[if gte mso 9]>
+          </td>
+          <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%">
+            <![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- menu pic -->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td valign="top" align="center" class="content" bgcolor="#f6f5ef" style="text-align: center; color: #2c2b2b; padding: 0; margin: 0; border-bottom: 0px solid #f6f5ef;">
+              <table class="" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="bottom" align="center" class="info-box" bgcolor="#f6f5ef" style="color: #2c2b2b; font-family: 'Trebuchet MS', sans-serif; font-size: 18px; font-weight: normal; padding: 0; margin: 0;">
+                    <p class="small-font--mobile" style="text-align: center; font-family: Georgia, Trebuchet MS, sans-serif; font-style: italic;  font-size: 18px; line-height: 32px; color: #2c2b2b; margin: 0 2% 25px; width: 85%;">
+                      Als einer der Vorreiter des bio-dynamischen Weinanbaus hat Fred Loimer nicht umsonst zahlreiche nationale und internationale
+                      Auszeichnungen erhalten. Jeder seiner wunderbaren Weine ist ein Individuum, das aber die Typizität seiner Herkunft mit sich trägt.
+                    </p>
+                    <p class="small-font--mobile" style="text-align: center; font-family: Georgia, Trebuchet MS, sans-serif; font-style: italic;  font-size: 18px; line-height: 32px; color: #2c2b2b; margin: 0 2% 25px; width: 85%;">
+                      Auch die Tatsache, dass er Mitglied der Österreichischen
+                      Traditionsweingüter ist, unterstützt die enorme Qualität,
+                      die seine Weine auszeichnet.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> <!-- END: menu pic -->
+
+  <table class="container" width="650" height="50" align="center" border="0" cellpadding="0" cellspacing="0" style="border-bottom: 0px solid #f6f5ef;">
+    <tbody>
+      <tr>
+        <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%" height="30">
+          <!--[if gte mso 9]>
+            </td>
+            <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%">
+              <![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- booking pic footer -->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td valign="top" align="center" class="content" bgcolor="#f6f5ef" style="text-align: center; color: #2c2b2b; padding: 0; margin: 0; border-bottom: 0px solid #f6f5ef;">
+              <table class="" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="top" align="center" class="info-box hr" bgcolor="#f6f5ef" style="color: #2c2b2b; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold; padding: 10px; margin: 0;"><a href="https://www.lafonda.koeln/#js-special-event-menu" target="_blank"><img src="https://files.crsend.com/183000/183421/images/la-fonda-nl/2019/04r/la-fonda--btn-reservieren-footer.jpg" alt="" border="0" style="padding: 0; margin: 0; vertical-align: top; width: 193px;" class="img100p"></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table> <!-- END: booking pic footer -->
+
+  <table class="container" width="650" height="50" align="center" border="0" cellpadding="0" cellspacing="0" style="border-bottom: 0px solid #f6f5ef;">
+    <tbody>
+      <tr>
+        <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%" height="30">
+          <!--[if gte mso 9]>
+            </td>
+            <td valign="bottom" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%">
+              <![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- footer -->
+  <!-- spacer gray-->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" align="center" class="footer-top-menu" bgcolor="#f6f5ef" style="text-align: center; color: #f6f5ef;">
+        <table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" class="footer-top-deco-line">
+          <tbody>
+            <tr>
+              <td valign="middle" height="25" align="left" bgcolor="#f6f5ef" style="color: #686868; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold;"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- footer menu -->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td valign="top" bgcolor="#f6f5ef" style="color: #f6f5ef;" width="100%">
+          <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" class="footer-menu">
+            <tbody>
+              <tr>
+                <td>
+                  <table width="50%" align="left" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td align="center" valign="middle" bgcolor="#f6f5ef" style="font-family: Helvetica, Arial, sans-serif; font-size: 18px; color: #424040; vertical-align: middle; padding: 5px 1px 5px 1px;">
+                          <p class="hide-border--mobile add-border-bottom--mobile" style="font-family: Georgia, serif; text-align: center; font-size: 18px; line-height: 32px; color: #424040; text-decoration: none; font-style: italic; margin: 10px 1px 50px 1px; border-right: 1px solid #403f3f;">
+                            Gereonskloster 8<br>
+                            50670 Köln
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table width="45%" align="right" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td align="center" valign="middle" bgcolor="#f6f5ef" style="font-family: Helvetica, Arial, sans-serif; font-size: 18px; color: #424040; vertical-align: middle; padding: 5px 1px 5px 1px;">
+                          <p style="font-family: Georgia, serif; text-align: center; font-size: 18px; line-height: 32px; color: #424040; text-decoration: none; font-style: italic; margin: 10px 1px 50px 1px;">
+                            <a href="tel:022116817515" target="_blank" style="font-family: Georgia, serif; font-size: 18px; font-style: italic; line-height: 32px; color: #424040; text-decoration: none; padding: 10px 1px 10px 1px;">0221 168 175 15</a>
+                            <br>
+                            <a href="mailto:hello@lafonda.koeln" target="_blank" style="font-family: Georgia, serif; font-size: 18px; font-style: italic; line-height: 32px; color: #424040; text-decoration: none; padding: 10px 1px 10px 1px;">hello@lafonda.koeln</a>
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- spacer bg-->
+  <table class="container" width="650" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" align="center" class="footer-top-menu" bgcolor="#f6f5ef" style="text-align: center; color: #f6f5ef;">
+        <table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" class="footer-top-deco-line">
+          <tbody>
+            <tr>
+              <td valign="middle" height="25" align="left" bgcolor="#f6f5ef" style="color: #686868; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold;"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- spacer -->
+  <table class="container" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" align="center" class="footer-top-menu" bgcolor="#ffffff" style="text-align: center; color: #ffffff;">
+        <table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" class="footer-top-deco-line">
+          <tbody>
+            <tr>
+              <td valign="middle" height="25" align="left" bgcolor="#ffffff" style="color: #686868; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- impressum -->
+  <table class="container" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" align="center" class="footer-top-menu" bgcolor="#ffffff" style="text-align: center; color: #747373;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+          <tbody>
+            <tr>
+              <td align="center">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <!-- <td width="2%" align="center" bgcolor="#ffffff" style="font-family: Georgia, serif; font-size: 14px; color: #686868;"> -->
+              </td>
+              <td width="100%" height="50px" align="center" valign="middle" bgcolor="#ffffff" style="font-family: Georgia, serif; font-style: italic; font-size: 14px; color: #747373; vertical-align: middle;">
+                <p style="font-family: Georgia, serif; font-style: italic; font-size: 12px; line-height: 17px; color: #747373; text-decoration: none; display: inline; padding-left: 10px;">La Fonda Restaurant GmbH & Co. KG, Gereonskloster 8, 50670 K&ouml;ln<br /> Sitz: Amtsgericht Köln, HRA: 32881, UST-ID: DE 316368352<br /> Geschäftsführer: Jan Nawrocki, Philip Spohr<br /><br /><br /> All Rights Reserved 2018<br /><br />
+                </p>
+              </td>
+              <!-- <td width="2%" align="center" bgcolor="#ffffff" style="font-family: Georgia, serif; font-size: 14px; color: #686868;"> -->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  </td>
+  </tr>
+  </table>
+  <!-- spacer -->
+  <table class="container" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" align="center" class="footer-top-menu" bgcolor="#ffffff" style="text-align: center; color: #ffffff;">
+        <table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" class="footer-top-deco-line">
+          <tbody>
+            <tr>
+              <td valign="middle" height="25" align="left" bgcolor="#ffffff" style="color: #686868; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; font-weight: bold;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- html view / unsubscribe -->
+  <table class="container" width="100%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+    <tr>
+      <td valign="top" align="center" class="footer-top-menu" bgcolor="#ffffff" style="text-align: center; color: #6e7773;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+          <tbody>
+            <tr>
+              <td align="center">
+                <table width="100%" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="2%" align="center" bgcolor="#ffffff" style="font-family: Georgia, serif; font-size: 14px; color: #6e7773;">
+                      </td>
+                      <td width="100%" height="50px" align="center" valign="middle" bgcolor="#ffffff" style="font-family: Georgia, serif; font-style: italic; font-size: 14px; color: #6e7773; vertical-align: middle;">
+                        <p style="font-family: Georgia, serif; font-style: italic; font-size: 12px; line-height: 17px; color: #6e7773; text-decoration: none; display: inline; padding-left: 10px;">
+
+                          Falls dieser Newsletter nicht richtig dargestellt wird, klicken Sie bitte <a href="{ONLINE_VERSION}" style="font-family: Georgia, serif; font-style: italic; font-size: 12px; line-height: 17px; color: #6e7773; text-decoration: underline; display: inline;">hier</a>.<br />
+
+                          Klicken Sie <a href="{UNSUBSCRIBE}" style="font-family: Georgia, serif; font-style: italic; font-size: 12px; line-height: 17px; color: #6e7773; text-decoration: underline; display: inline;">hier</a>, um zukünftig keine Nachrichten dieser Art von uns zu erhalten. <br /><br />
+                        </p>
+                      </td>
+                      <td width="2%" align="center" bgcolor="#ffffff" style="font-family: Georgia, serif; font-size: 14px; color: #6e7773;">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+<img src="https://stats-eu2.crsend.com/stats/mc_[CLIENT_ID]_[MAILING_ID]_[USER_ID_SECURE].gif" border="0" alt="" height="1" width="1">
+
+</html>
