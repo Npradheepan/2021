@@ -1,0 +1,44 @@
+body {
+  background-color: #1f1c22;
+  color: white;
+}
+.main-wrapper {
+  margin: 100px auto;
+  width: 800px;
+  position: relative;
+  perspective: 700px;
+}
+.main-wrapper input {
+  display: none;
+}
+.main-wrapper input:checked + label {
+  background-color: #4ec6de;
+}
+.main-wrapper label {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-right: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main-wrapper label:hover {
+  background-color: #4ec6de;
+}
+.tabs > div {
+  width: 800px;
+  height: 420px;
+  position: absolute;
+  border: 2px solid #4ec6de;
+  padding: 10px 40px 30px;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.8s ease;
+}
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4) {
+  transform: none;
+  opacity: 1;
+}
